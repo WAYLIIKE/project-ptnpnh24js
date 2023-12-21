@@ -45,11 +45,11 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
+    background: #E8E8E2;
     
     border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    
+    border: #E8E8E2;
+
     display: flex;
     align-items: center;
     justify-content: center;
