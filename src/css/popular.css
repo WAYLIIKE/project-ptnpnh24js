@@ -1,1 +1,50 @@
 /* Popular block styles */
+
+@media screen and (min-width: 768px) {
+  .popular-containar {
+    margin: 12px 12px 12px;
+    display: flex;
+  }
+  .popular-item {
+    min-width: 335px;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+
+  .popular-image-container {
+    width: 74px;
+    height: 74px;
+    margin-left: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: var(--background);
+  }
+  .popular-image {
+    margin: 9px;
+  }
+  .info-popular-card {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .popular-name {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+  }
+  .popularbtn-basket {
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .popular-tittle {
+    color: var(--black);
+    /* font-family: Neue Montreal; */
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.14;
+  }
+}
