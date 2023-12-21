@@ -1,1 +1,24 @@
 /* Empty basket styles */
+
+.empty_header {
+    color: #010101;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11; 
+    margin-bottom: 14px;
+}
+
+.empty_black {
+    color: #6D8434;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+}
+
+.empty_message {
+    color: rgba(1, 1, 1, 0.70);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+}
