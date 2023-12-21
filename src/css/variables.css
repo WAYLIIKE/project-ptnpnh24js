@@ -1,0 +1,9 @@
+:root {
+  --animation: 175ms ease-in-out;
+  --black: #010101;
+  --green: #6d8434;
+  --hover-green: #586f1f;
+  --white: #fafafa;
+  --grey: rgba(1, 1, 1, 0.5);
+  --background: #e8e8e2;
+}

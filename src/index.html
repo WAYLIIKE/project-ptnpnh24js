@@ -2,23 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>FoodBoutique</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.png" />
+    <!-- Styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
-
-    <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
-    </section>
-
-    <!-- Loads the specified .html file -->
-    <load ="partials/vite-promo.html" />
-
-    <script type="module" src="/main.js"></script>
+    <!-- HEADER by Max -->
+    <header><load src="./partials/header.html" /></header>
+    <main>
+      <!-- HERO SECTION by Валентина Бігун -->
+      <load src="./partials/hero.html" />
+      <!-- MENU CARD by Anya Semonenko -->
+      <load src="./partials/menuProducts.html" />
+      <!-- POPULAR SECTION by Irina Lender -->
+      <load src="./partials/popular.html" />
+      <!-- DISCOUNT SECTION by Fedir Svyrydov -->
+      <load src="./partials/discount.html" />
+    </main>
+    <!-- FOOTER by Sofiia -->
+    <footer><load src="./partials/footer.html" /></footer>
+    <!-- MODAL CARD by -->
+    <load src="./partials/modalCard.html" />
+    <!-- MODAL SUBSCRIPTION by -->
+    <load src="./partials/modalSubscription.html" />
+    <!-- MODAL ERROR SUBSCRIPTION by -->
+    <load src="./partials/modalErrorSubscription.html" />
+    <!-- MODAL ORDER by -->
+    <load src="./partials/modalOrder.html" />
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
