@@ -97,11 +97,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: var(--animation);
-}
-.header-logo-duo:hover {
-  border: 2px solid var(--green);
-  border-radius: 5px;
 }
 .header-shop-div {
   background-color: var(--green);
