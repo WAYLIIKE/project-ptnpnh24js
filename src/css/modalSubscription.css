@@ -96,6 +96,7 @@
   padding-top: 100px;
   padding-left: 42px;
   padding-right: 43px;
+  padding-bottom: 22px;
 }
 @media screen and (min-width: 768px) {
   .modal-main-item {
@@ -103,5 +104,18 @@
     padding-left: 81px;
     padding-right: 81px;
     gap: 20px;
+    padding-bottom: 3px;
+  }
+}
+.products-modal-card {
+  width: 335px;
+  height: 144px;
+  border-radius: 18.966px;
+  flex-shrink: 0;
+}
+@media screen and (min-width: 768px) {
+  .products-modal-card {
+    width: 490px;
+    height: 159px;
   }
 }
