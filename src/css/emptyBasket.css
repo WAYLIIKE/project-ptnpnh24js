@@ -9,7 +9,7 @@ padding: 105px 48px 120px;
 }
 
 .empty_header {
-    color: #6D8434;
+    color: var(--green);
     font-size: 18px;
     font-weight: 500;
     line-height: 1.11; 
@@ -18,7 +18,7 @@ padding: 105px 48px 120px;
 }
 
 .empty_black {
-    color: #010101;
+    color: var(--black);
     font-size: 18px;
     font-weight: 500;
     line-height: 1.11;
@@ -54,7 +54,7 @@ padding: 105px 48px 120px;
     }
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1440px) {
     .empty_section {
         padding: 155px 526px 150px;
     }
