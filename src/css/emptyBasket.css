@@ -1,14 +1,14 @@
 /* Empty basket styles */
 
-.empty_section {
+.emptyBasket_section {
 padding: 105px 48px 120px;
 }
 
-.empty_basket {
+.emptyBasket_img {
     margin: 0 auto;
 }
 
-.empty_header {
+.emptyBasket_header {
     color: var(--green);
     font-size: 18px;
     font-weight: 500;
@@ -17,14 +17,14 @@ padding: 105px 48px 120px;
     text-align: center;
 }
 
-.empty_black {
+.emptyBasket_black {
     color: var(--black);
     font-size: 18px;
     font-weight: 500;
     line-height: 1.11;
 }
 
-.empty_message {
+.emptyBasket_message {
     color: rgba(1, 1, 1, 0.70);
     text-align: center;
     font-size: 14px;
@@ -36,18 +36,18 @@ padding: 105px 48px 120px;
 
 @media screen and (min-width: 768px) {
 
-    .empty_section {
+    .emptyBasket_section {
         padding: 135px 190px 722px;
     }
 
-    .empty_header, .empty_black {
+    .emptyBasket_header, .emptyBasket_black {
         font-size: 20px;
         line-height: 1.2;
         margin-top: 40px;
 
     }
 
-    .empty_message {
+    .emptyBasket_message {
         font-size: 18px;
         line-height: 1.33;
         width: 387px;
@@ -55,7 +55,7 @@ padding: 105px 48px 120px;
 }
 
 @media screen and (min-width: 1440px) {
-    .empty_section {
+    .emptyBasket_section {
         padding: 155px 526px 150px;
     }
 }
