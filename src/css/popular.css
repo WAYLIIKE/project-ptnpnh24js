@@ -9,10 +9,15 @@
 }
 .popular-tittle {
   margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.16;
 }
 .popular-item {
   background-color: var(--white);
   border-radius: 10px;
+}
+.popular-item:not(:last-child) {
   margin-bottom: 14px;
 }
 .popular-card {
@@ -71,15 +76,12 @@ b {
 .svg-box {
   fill: currentColor;
 }
+.add {
+  display: flex;
+  column-gap: 9px;
+  margin-top: 9px;
+}
 @media screen and (min-width: 768px) {
-  .info-popular-card {
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-
-  .popularbtn-basket {
-    margin-right: 12px;
-  }
 }
 @media screen and (min-width: 1440px) {
 }

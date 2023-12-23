@@ -21,8 +21,8 @@ getDataAllPopular()
   });
 
 function createMarkUpPopular(arr) {
-  const markUp = arr.map(({ id, img, name, category, size, popularity }) => {
-    return `<li class="popular-item" data-id='${id}'>
+  const markUp = arr.map(({ _id, img, name, category, size, popularity }) => {
+    return `<li class="popular-item" data-id='${_id}'>
     <div class="popular-card">
     <div class="popular-image-container">
     <img class="popular-image" src="${img}" alt="${name}" width="56px" height="56px">
@@ -31,10 +31,12 @@ function createMarkUpPopular(arr) {
     <h4 class="popular-name">${name}</h4>
     <p class="info-popular-item">Category:
     <b>${category}</b></p>
+    <div class="add">
     <p class="info-popular-item">Size: 
     <b>${size}</b></p>
     <p class="info-popular-item">Popularity:
     <b>${popularity}</b></p>
+    </div>
     </div>
     <button class="popularbtn-basket" type="button">
     </button>
@@ -49,12 +51,12 @@ function onClick(event) {
   const targetButton = event.target.closest('.popularbtn-basket');
   if (!targetButton) return;
   const card = targetButton.closest('.popular-item');
-  const id = Number(card.dataset.productId);
+  const id = card.dataset.productId;
   const basket = getBasketLocalStorage();
   if (basket.includes(id)) return;
-
   basket.push(id);
   setBasketLocalStorage(basket);
+  console.log(id);
 }
 function getBasketLocalStorage() {
   const cardDataJSONE = localStorage.getItem('basket');
@@ -75,3 +77,8 @@ function setBasketLocalStorage(basket) {
 //   return Array.find(({ id }) => id === productId);
 // }
 // console.log(onClick());
+
+// Проверка кнопок на активность.Наличие в корзине . Изменить иконку кнопки
+function activButton(basket) {
+  const buttons = document.querySelectorAll('.popularbtn-basket');
+}
