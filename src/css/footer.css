@@ -138,10 +138,9 @@
 .footer-form-input {
     padding: 12px 18px;
     border-radius: 30px;
-    border: #e8e8e2;
-    ;
+    border: #fafafa;
     background-color: transparent;
-    color: #e8e8e24d;
+    color:  rgba(1, 1, 1, 0.5);
     margin-bottom: 14px;
     width: 100%
 }
