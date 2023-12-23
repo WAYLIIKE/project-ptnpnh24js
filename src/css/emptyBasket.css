@@ -1,1 +1,103 @@
 /* Empty basket styles */
+
+.emptyBasket_div {
+    background-color: var(--green);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--animation);
+}
+
+.emptyBasket_div:hover {
+    background-color: var(--hover-green);
+} 
+
+.emptyBasket_svg {
+    width: 18px;
+    height: 18px;
+}
+
+.emptyBasket_card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 86px 0 105px;
+}
+
+.emptyBasket_cart {
+    color: var(--black);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.16;
+    text-transform: uppercase;
+}
+
+.emptyBasket_img {
+    margin: 0 auto;
+}
+
+.emptyBasket_header {
+    color: var(--green);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11; 
+    margin: 28px 0 14px;
+    text-align: center;
+}
+
+.emptyBasket_black {
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+}
+
+.emptyBasket_message {
+    color: rgba(1, 1, 1, 0.70);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.28;
+    width: 279px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+
+    .emptyBasket_header, .emptyBasket_black {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-top: 40px;
+
+    }
+
+    .emptyBasket_message {
+        font-size: 18px;
+        line-height: 1.33;
+        width: 387px;
+    }
+
+    .emptyBasket_card {
+        margin: 116px 0 135px;
+    }
+
+    .emptyBasket_cart {
+        font-size: 32px;
+        line-height: 1;
+    }
+
+    .emptyBasket_div {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .emptyBasket_card {
+        margin: 94px 0 155px;
+    }
+}

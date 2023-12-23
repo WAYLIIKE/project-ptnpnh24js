@@ -11,6 +11,6 @@ addItemButton.addEventListener('click', function () {
 removeItemButton.addEventListener('click', function () {
   removeItemFromLocalArray(0);
 });
-updateItemCountDisplay();
+updateItemCountDisplay(); 
 
 ////////////////////////////////////////////////////////////////////////////
