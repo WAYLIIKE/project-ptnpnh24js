@@ -29,8 +29,10 @@
   background-color: var(--background);
 }
 .info-popular-card {
+  min-width: 152px;
   margin-top: 12px;
   margin-bottom: 12px;
+  margin-right: 55px;
 }
 .popular-name {
   font-size: 18px;
@@ -54,10 +56,20 @@ b {
   margin: 9px;
 }
 .popularbtn-basket {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+.svg-box {
+  fill: currentColor;
 }
 @media screen and (min-width: 768px) {
   .info-popular-card {

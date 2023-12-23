@@ -36,7 +36,8 @@ function createMarkUpPopular(arr) {
     <p class="info-popular-item">Popularity:
     <b>${popularity}</b></p>
     </div>
-    <button class="popularbtn-basket" type="button"></button>
+    <button class="popularbtn-basket" type="button">
+    </button>
     </div>
     </li>`;
   });
@@ -45,14 +46,32 @@ function createMarkUpPopular(arr) {
 
 popularList.addEventListener('click', onClick);
 function onClick(event) {
-  if (event.target.classList.contains('.popularbtn-basket')) {
-    const product = findProduct(event.target);
-    basketArr.push(product);
-    localStorage.setItem(PRODUCT_KEY, JSON.stringify(basketArr));
-  }
+  const targetButton = event.target.closest('.popularbtn-basket');
+  if (!targetButton) return;
+  const card = targetButton.closest('.popular-item');
+  const id = Number(card.dataset.productId);
+  const basket = getBasketLocalStorage();
+  if (basket.includes(id)) return;
+
+  basket.push(id);
+  setBasketLocalStorage(basket);
 }
-function findProduct(element) {
-  const productId = Number(element.closest('.popular-item')).dataset.id;
-  return Array.find(({ id }) => id === productId);
+function getBasketLocalStorage() {
+  const cardDataJSONE = localStorage.getItem('basket');
+  return cardDataJSONE ? JSON.parse(cardDataJSONE) : [];
 }
-console.log(onClick());
+function setBasketLocalStorage(basket) {
+  localStorage.setItem('basket', JSON.stringify(basket));
+}
+// function onClick(event) {
+//   if (event.target.classList.contains('.popularbtn-basket')) {
+//     const product = findProduct(event.target);
+//     basketArr.push(product);
+//     localStorage.setItem(PRODUCT_KEY, JSON.stringify(basketArr));
+//   }
+// }
+// function findProduct(element) {
+//   const productId = Number(element.closest('.popular-item')).dataset.id;
+//   return Array.find(({ id }) => id === productId);
+// }
+// console.log(onClick());
