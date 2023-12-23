@@ -18,7 +18,7 @@ function closemodal() {
 function closeModalOnEsc(event) {
   if (event.key === 'Escape') {
     modal.style.display = 'none';
-    document.body.style.scroll = 'auto';
+    document.body.style.overflow = '';
   }
 }
 
