@@ -7,12 +7,12 @@ closeButton.addEventListener('click', closemodal);
 
 function openwindow() {
   modal.style.display = 'block';
-  document.body.style.scroll = 'none';
+  document.body.style.overflow = 'hidden';
 }
 
 function closemodal() {
   modal.style.display = 'none';
-  document.body.style.scroll = 'auto';
+  document.body.style.overflow = '';
 }
 
 function closeModalOnEsc(event) {
