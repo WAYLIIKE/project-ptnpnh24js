@@ -1,1 +1,121 @@
 /* Modal subscription styles */
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 335px;
+  height: 400px;
+  border-radius: 20px;
+  background: var(--background);
+  transition: var(--animation);
+}
+@media screen and (min-width: 768px) {
+  .modal-window {
+    min-width: 490px;
+  }
+}
+.modal-name {
+  color: var(--black);
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  width: 245px;
+  height: 48px;
+}
+@media screen and (min-width: 768px) {
+  .modal-name {
+    font-size: 24px;
+  }
+}
+.modal-text-new {
+  color: var(--green);
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  .modal-text-new {
+    font-size: 24px;
+  }
+}
+.modal-text {
+  color: var(--grey);
+  text-align: center;
+  font-weight: 400;
+  width: 248px;
+  height: 72px;
+  font-size: 14px;
+  line-height: 18px;
+}
+@media screen and (min-width: 768px) {
+  .modal-text {
+    font-size: 16px;
+    line-height: 20px;
+    width: 328px;
+    height: 80px;
+  }
+}
+.modal-close {
+  height: 22px;
+  width: 22px;
+}
+@media screen and (min-width: 768px) {
+  .modal-close {
+    width: 28px;
+    height: 28px;
+  }
+}
+.button-modal-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--grey);
+}
+.modal-main-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding-top: 100px;
+  padding-left: 42px;
+  padding-right: 43px;
+  padding-bottom: 22px;
+}
+@media screen and (min-width: 768px) {
+  .modal-main-item {
+    padding-top: 90px;
+    padding-left: 81px;
+    padding-right: 81px;
+    gap: 20px;
+    padding-bottom: 3px;
+  }
+}
+.products-modal-card {
+  width: 335px;
+  height: 144px;
+  border-radius: 18.966px;
+  flex-shrink: 0;
+}
+@media screen and (min-width: 768px) {
+  .products-modal-card {
+    width: 490px;
+    height: 159px;
+  }
+}

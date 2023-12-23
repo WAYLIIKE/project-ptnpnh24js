@@ -1,18 +1,3 @@
-// MODAL SUBSCRIPTION //
-import {
-  openwindow,
-  closemodal,
-  closeModalOnEsc,
-  openButton,
-  closeButton,
-} from './modalSubscription';
-
-document.addEventListener('keydown', closeModalOnEsc);
-openButton.addEventListener('click', openwindow);
-closeButton.addEventListener('click', closemodal);
-
-////////////////////////////////////////////////////////////////////////////
-
 // COUNT OF BASKET //
 import {
   addItemButton,

@@ -1,4 +1,5 @@
 :root {
+  --primary-font: 'Neue Montreal', sans-serif;
   --animation: 175ms ease-in-out;
   --black: #010101;
   --green: #6d8434;

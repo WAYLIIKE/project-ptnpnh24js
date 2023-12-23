@@ -1,8 +1,75 @@
 /* Base styles */
 
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Regular.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Bold.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Medium.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-BoldItalic.otf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Italic.otf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-MediumItalic.otf');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-LightItalic.otf');
+  font-weight: 300;
+  font-style: italic;
+}
+
 body {
+  font-family: var(--primary-font);
   background-color: var(--background);
   color: var(--black);
+}
+
+header {
+  margin-top: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    margin-top: 24px;
+  }
 }
 
 .container {
