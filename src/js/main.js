@@ -13,7 +13,7 @@ closeButton.addEventListener('click', closemodal);
 
 ////////////////////////////////////////////////////////////////////////////
 
-// HEADER COUNT OF BASKET //
+// COUNT OF BASKET //
 import {
   addItemButton,
   removeItemButton,
