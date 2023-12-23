@@ -43,3 +43,5 @@ removeItemButton.addEventListener('click', function () {
   removeItemFromLocalArray(0);
 });
 updateItemCountDisplay();
+
+export { addItemButton, removeItemButton, updateItemCountDisplay };

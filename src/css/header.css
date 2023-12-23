@@ -78,18 +78,7 @@
 .header-logo-main {
   display: flex;
   align-items: center;
-  margin-top: 18px;
   justify-content: space-between;
-}
-@media screen and (min-width: 768px) {
-  .header-logo-main {
-    margin-top: 32px;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .header-logo-main {
-    margin-top: 24px;
-  }
 }
 .header-logo-duo {
   display: flex;
@@ -180,9 +169,10 @@
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 768px){
-.header-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}}
+@media screen and (min-width: 768px) {
+  .header-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+}
