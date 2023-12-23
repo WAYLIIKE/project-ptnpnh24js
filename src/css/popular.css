@@ -61,7 +61,8 @@ b {
   margin: 9px;
 }
 .popularbtn-basket {
-  display: flex;
+  display: inline-flex;
+  padding: 4px;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -73,14 +74,25 @@ b {
   margin-top: 16px;
   margin-right: 16px;
 }
-.svg-box {
+.popularbtn-basket:hover {
+  background-color: var(--green);
+}
+.icon-shop {
   fill: currentColor;
+}
+.icon-check {
+  background-color: var(--green);
+  border-radius: 50%;
 }
 .add {
   display: flex;
   column-gap: 9px;
   margin-top: 9px;
 }
+.is-hidden {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
 }
 @media screen and (min-width: 1440px) {
