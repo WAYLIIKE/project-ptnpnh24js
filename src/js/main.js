@@ -29,3 +29,9 @@ removeItemButton.addEventListener('click', function () {
 updateItemCountDisplay();
 
 ////////////////////////////////////////////////////////////////////////////
+
+// MODAL ERROR SUBSCRIPTION //
+
+import { modalErrorSubscription } from './modalErrorSubscription';
+
+modalErrorSubscription();
