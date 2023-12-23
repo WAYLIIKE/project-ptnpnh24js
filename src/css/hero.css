@@ -42,14 +42,14 @@
   }
 }
 .hero-title-span {
-  color: var(--black);
+  color: var(--green);
 }
 .hero-info {
   max-width: 292px;
   margin: 0 auto;
   margin-bottom: 32px;
 
-  color: rgba(1, 1, 1, 0.3);
+  color: var(--grey);
   text-align: center;
   font-size: 14px;
   line-height: 1.28; /* 128.571% */
@@ -74,7 +74,7 @@
   height: 480px;
   margin: 0 auto;
 
-  background-color: #6d8434;
+  background-color: var(--green);
   background-image: url(../img/hero/mobile_hero/women-sportswear-working-out-outdoors\ 1.jpg);
   background-repeat: no-repeat;
   background-position: center;
