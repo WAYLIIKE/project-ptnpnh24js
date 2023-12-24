@@ -2,8 +2,6 @@
 .popular-container {
   min-width: 320px;
   max-width: 335px;
-  padding-left: 10px;
-  padding-right: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -16,6 +14,8 @@
 .popular-item {
   background-color: var(--white);
   border-radius: 10px;
+  padding: 12px;
+  /* max-width: 335px; */
 }
 .popular-item:not(:last-child) {
   margin-bottom: 14px;
@@ -26,18 +26,13 @@
 .popular-image-container {
   width: 74px;
   height: 74px;
-  margin-left: 12px;
-  margin-top: 12px;
-  margin-bottom: 12px;
   margin-right: 10px;
   border-radius: 10px;
   background-color: var(--background);
 }
 .info-popular-card {
-  min-width: 152px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-right: 55px;
+  max-width: 152px;
+  padding-right: 55px;
 }
 .popular-name {
   font-size: 18px;
@@ -71,14 +66,10 @@ b {
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  margin-top: 16px;
-  margin-right: 16px;
+  background-color: var(--green);
 }
 .popularbtn-basket:hover {
   background-color: var(--green);
-}
-.icon-shop {
-  fill: currentColor;
 }
 .icon-check {
   background-color: var(--green);
@@ -86,6 +77,9 @@ b {
 }
 .add {
   display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
   column-gap: 9px;
   margin-top: 9px;
 }
@@ -94,6 +88,48 @@ b {
 }
 
 @media screen and (min-width: 768px) {
+  .popular-container {
+    max-width: 563px;
+  }
+  .popular-tittle {
+    font-size: 28px;
+    line-height: 1.14;
+  }
+  .popular-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
+  .popular-item {
+    max-width: 251px;
+    flex-basis: calc((100% - 13px * 1) / 2);
+  }
+  .popular-image-container {
+    width: 74px;
+    height: 74px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: var(--background);
+  }
+  .popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 13px;
+    row-gap: 13px;
+  }
+  .info-popular-card {
+    padding-right: 0;
+  }
+  .popular-name {
+    margin-bottom: 10px;
+  }
+  .add {
+    width: 152px;
+  }
 }
 @media screen and (min-width: 1440px) {
+  .popular-list {
+    display: block;
+  }
+  .popular-item:not(:last-child) {
+    margin-bottom: 14px;
+  }
 }

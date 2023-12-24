@@ -41,7 +41,7 @@ function createMarkUpPopular(arr) {
     </div>
     <button class="popularbtn-basket " type="button">
    
-    <svg class = "icon-check is-hidden "  width="12" height="12">
+    <svg class = "icon-check  is-hidden"  width="12" height="12">
     <use href="${iconCheck}"></use></svg>
    
    
@@ -63,14 +63,13 @@ function onClick(event) {
   const id = card.dataset.id;
   const basket = getBasketLocalStorage();
 
-  if (basket.includes(id)) return;
-
-  // ПЕРЕВІР ТУТ
-  // const check = document.querySelectorAll('.icon-check');
-  // const shop = document.querySelector('.icon-shop');
-  // shop.classList.add("is-hidden");
-  // check.classList.remove('is-hidden');
-
+  if (basket.includes(id)) {
+    const check = targetButton.querySelector('.icon-check');
+    const shop = targetButton.querySelector('.icon-shop');
+    shop.classList.add('is-hidden');
+    check.classList.remove('is-hidden');
+    return;
+  }
   basket.push(id);
   setBasketLocalStorage(basket);
 }
