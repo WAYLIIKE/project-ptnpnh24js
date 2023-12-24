@@ -7,6 +7,7 @@ const modalErrorSubscription = () => {
 
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModalclose);
+  document.addEventListener('keydown', closeModalOnEsc);
 
   function toggleModal() {
     refs.modal.classList.toggle('is-visible');
@@ -15,6 +16,12 @@ const modalErrorSubscription = () => {
   function toggleModalclose() {
     refs.modal.classList.toggle('is-visible');
     document.body.style.overflow = '';
+  }
+  function closeModalOnEsc(event) {
+    if (event.key === 'Escape' && refs.modal.classList.contains('is-visible')) {
+      refs.modal.classList.toggle('is-visible');
+      document.body.style.overflow = '';
+    }
   }
 };
 export { modalErrorSubscription };
