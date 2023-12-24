@@ -70,7 +70,7 @@
   height: 480px;
   margin: 0 auto;
   background-color: var(--green);
-  background-image: url(/img/hero/mobile_hero/women-sportswear-working-out-outdoors\ 1.jpg);
+  background-image: url(/img/hero/mobile_hero/women-sportswear-working-out-outdoors1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -78,7 +78,7 @@
 }
 @media only screen and (min-resolution: 192dpi) {
   .hero-image {
-    background-image: url(/img/hero/mobile_hero/women-sportswear-working-out-outdoors\ 1@2x.jpg);
+    background-image: url(/img/hero/mobile_hero/women-sportswear-working-out-outdoors1@2x.jpg);
   }
 }
 
@@ -86,12 +86,12 @@
   .hero-image {
     max-width: 704px;
     height: 580px;
-    background-image: url(/img/hero/tablet_hero/women-sportswear-working-out-outdoors\ 1.jpg);
+    background-image: url(/img/hero/tablet_hero/women-sportswear-working-out-outdoors1.jpg);
     border-radius: 50px;
   }
   @media only screen and (min-resolution: 192dpi) {
     .hero-image {
-      background-image: url(/img/hero/tablet_hero/women-sportswear-working-out-outdoors\ 1@2x.jpg);
+      background-image: url(/img/hero/tablet_hero/women-sportswear-working-out-outdoors1@2x.jpg);
     }
   }
 }
@@ -99,11 +99,11 @@
   .hero-image {
     max-width: 1240px;
     height: 350px;
-    background-image: url(/img/hero/desktop_hero/women-sportswear-working-out-outdoors\ 1.jpg);
+    background-image: url(/img/hero/desktop_hero/women-sportswear-working-out-outdoors1.jpg);
   }
   @media only screen and (min-resolution: 192dpi) {
     .hero-image {
-      background-image: url(/img/hero/desktop_hero/women-sportswear-working-out-outdoors\ 1@2x.jpg);
+      background-image: url(/img/hero/desktop_hero/women-sportswear-working-out-outdoors1@2x.jpg);
     }
   }
 }
