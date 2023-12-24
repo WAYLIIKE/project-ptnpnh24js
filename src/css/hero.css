@@ -86,6 +86,7 @@
   .hero-image {
     max-width: 704px;
     height: 580px;
+    background-image: url(/img/hero/tablet_hero/women-sportswear-working-out-outdoors\ 1.jpg);
     border-radius: 50px;
   }
   @media only screen and (min-resolution: 192dpi) {
