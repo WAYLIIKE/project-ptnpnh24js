@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    margin: 86px 0 105px;
+    margin-bottom: 105px;
 }
 
 .emptyBasket_cart {
@@ -81,7 +81,7 @@
     }
 
     .emptyBasket_card {
-        margin: 116px 0 135px;
+        margin-bottom: 135px;
     }
 
     .emptyBasket_cart {
@@ -98,6 +98,6 @@
 @media screen and (min-width: 1440px) {
 
     .emptyBasket_card {
-        margin: 94px 0 155px;
+        margin-bottom: 155px;
     }
 }

@@ -3,23 +3,23 @@ const modal = document.querySelector('.backdrop');
 const closeButton = document.querySelector('.button-modal-icon');
 document.addEventListener('keydown', closeModalOnEsc);
 openButton.addEventListener('click', openwindow);
+closeModalOnEsc;
 closeButton.addEventListener('click', closemodal);
 
 function openwindow() {
-  modal.style.display = 'block';
+  modal.classList.toggle('is-visible');
   document.body.style.overflow = 'hidden';
 }
 
 function closemodal() {
-  modal.style.display = 'none';
+  modal.classList.toggle('is-visible');
   document.body.style.overflow = '';
 }
 
 function closeModalOnEsc(event) {
-  if (event.key === 'Escape') {
-    modal.style.display = 'none';
+  if (event.key === 'Escape' && modal.classList.contains('is-visible')) {
+    modal.classList.toggle('is-visible');
     document.body.style.overflow = '';
   }
 }
-
 export { openwindow, closemodal, closeModalOnEsc, openButton, closeButton };
