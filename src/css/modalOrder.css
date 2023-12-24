@@ -79,6 +79,7 @@
 }
 
 .modal-success_message {
+  width: 295px;
   color: rgba(1, 1, 1, 0.7);
   text-align: center;
   font-size: 14px;
