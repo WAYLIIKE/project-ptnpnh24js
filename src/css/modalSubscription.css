@@ -10,6 +10,7 @@
   background: var(--background);
   transition: var(--animation);
 }
+
 @media screen and (min-width: 768px) {
   .modal-window {
     min-width: 490px;
