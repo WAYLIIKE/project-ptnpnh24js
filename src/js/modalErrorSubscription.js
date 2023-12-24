@@ -6,10 +6,15 @@ const modalErrorSubscription = () => {
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModalclose);
 
   function toggleModal() {
     refs.modal.classList.toggle('is-visible');
+    document.body.style.overflow = 'hidden';
+  }
+  function toggleModalclose() {
+    refs.modal.classList.toggle('is-visible');
+    document.body.style.overflow = '';
   }
 };
 export { modalErrorSubscription };
