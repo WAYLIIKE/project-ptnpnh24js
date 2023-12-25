@@ -3,6 +3,8 @@ import {
   addItemButton,
   removeItemButton,
   updateItemCountDisplay,
+  addItemToLocalArray,
+  removeItemFromLocalArray,
 } from './header';
 
 addItemButton.addEventListener('click', function () {
