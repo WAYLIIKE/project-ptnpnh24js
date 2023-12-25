@@ -6,6 +6,7 @@ const modalOrder = () => {
   };
   refs.openModalBtn.addEventListener('click', openWindow);
   refs.closeModalBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', closeModalOnEsc);
 
   function openWindow() {
     refs.modal.classList.toggle('is-hidden');
@@ -17,6 +18,12 @@ const modalOrder = () => {
     refs.modal.classList.toggle('is-hidden');
     // refs.modal.style.display = 'none';
     document.body.style.overflow = '';
+  }
+  function closeModalOnEsc(event) {
+    if (event.key === 'Escape' && !refs.modal.classList.contains('is-hidden')) {
+      refs.modal.classList.toggle('is-hidden');
+      document.body.style.overflow = '';
+    }
   }
 };
 
