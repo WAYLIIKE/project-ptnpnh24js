@@ -1,18 +1,14 @@
 /* Modal error subscription styles */
 .modal-error {
-  position: absolute;
-  left: 0;
-  right: 0;
+  position: fixed;
   top: 0;
-  bottom: 0;
+  left: 0;
   background: rgba(1, 1, 1, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
   transition: var(--animation);
   opacity: 0;
   visibility: hidden;
-  padding: 20px;
 }
 
 .modal-error.is-visible {
@@ -22,10 +18,11 @@
 
 .modal-error-subscriprion {
   display: flex;
-  justify-content: center;
-  position: relative;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
   max-width: 469px;
-  width: 100%;
   height: 276px;
   border-radius: 20px;
   background: var(--background);
