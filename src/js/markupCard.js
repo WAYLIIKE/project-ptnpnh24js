@@ -1,76 +1,88 @@
 import { getAllProducts } from './fetchAPI';
-
 const allList = document.querySelector('.js-list');
-
 async function getDataAllProducts() {
   try {
     const result = await getAllProducts();
-    return result;
+    console.log(result);
+    allList.insertAdjacentHTML('beforeend', createMarkupAll(result.results));
   } catch (error) {
     console.log(error);
+    return error;
   }
 }
+getDataAllProducts();
 
-getDataAllProducts()
-  .then(createMarkupAll)
-  .catch(error => {
-    console.log(error);
-  });
-// шаблон картки 1
-
-// function createMarkupAll(arr) {
-//   console.log(arr);
-//   const markupAll = arr.map(
-//     ({ _id, img, name, category, size, popularity }) => {
-//       return `
-//         <li  class="product-card js-product" data-id="${_id}">
-//           <img class="product-img" src="${img}" alt="${name}" width="140px" height="140px">
-//           <h2 class="product-title">${name}</h2>
-//           <p class="product-category">Category:
-//            <b>${category}</b>
-//            </p>
-//            <p class="product-size">Size:
-//           <b>${size}</b>
-//           </p>
-//            <p class="product-popularity">Popularity:
-//            <b>${popularity}</b>
-//            </p>
-//            <p class="product-price">$
-//            <b>${price}</b>
-//           </p>
-//           <button class="product-add-btn type="button"></button>
-//          </li> `;
-//     }
-//   );
-
-//   allList.insertAdjacentHTML('beforeend', markupAll.join(''));
-// }
-//  шаблон картки 2
-allList.insertAdjacentHTML('afterbegin', createMarkupAll());
-
+//  розмітка  картки
 function createMarkupAll(arr) {
-  //   console.log(arr);
   return arr
     .map(
-      ({ id, img, name, category, size, popularity }) => `
-   <li  class="product-card js-product" data-id="${id}">
+      ({ id, img, name, category, size, popularity, price }) => `
+   <li  class="product-card" data-id="${id}">
+   <div class="product-cart-container">
+   <div class="product-image-container">
       <img class="product-img" src="${img}" alt="${name}" width="140px" height="140px">
-      <h2 class="product-title">${name}</h2>
-      <p class="product-category">Category:
+      </div>
+      </div>
+      <div class="card-content">
+      <h4 class="product-title">${name}</h4>
+      <div class="descr-container">
+      <p class="product-description">Category:
       <b>${category}</b>
       </p>
-      <p class="product-size">Size:
+      <p class="product-description">Size:
       <b>${size}</b>
-      </p>
-      <p class="product-popularity">Popularity:
+      </p> 
+      <p class="product-description">Popularity: 
       <b>${popularity}</b>
       </p>
-      <p class="product-price">$
-      <b>${price}</b>
+     </div>
+      <div class="price-info">
+      <p class="product-price">&#36;${price}
       </p>
-      <button class="product-add-btn type="button"></button>
+      
+      <button class="product-add-btn" type="button">
+      <svg class="cart-icon">
+      <use href="${cartIcon}" width="18" hight="18"></use>
+      </svg>
+
+       <svg class="cart-icon-check is-hidden">
+      <use href="${cartIconCheck}" width="18" hight="18"></use>  
+      </svg>
+      </button>
+      </div>
+      </div>
     </li>
         `
     )
     .join('');
+}
+// додавання в кошик
+const cartIcon = './img/icons/sprite.svg#icon-shop';
+const cartIconCheck = './img/icons/sprite.svg#icon-check';
+
+productsContainer.addEventListener('click', handlerClick);
+
+function handlerClick(event) {
+  const targetButton = event.target.closest('.product-add-btn');
+  if (!targetButton) return;
+  const card = event.target.closest('.product-card');
+  const id = card.dataset.id;
+  const basket = getBasketLocalStorage();
+
+  if (basket.includes(id)) {
+    const check = targetButton.querySelector('.icon-check');
+    const shop = targetButton.querySelector('.icon-shop');
+    shop.classList.add('is-hidden');
+    check.classList.remove('is-hidden');
+    return;
+  }
+  basket.push(id);
+  setBasketLocalStorage(basket);
+}
+function getBasketLocalStorage() {
+  const cardDataJSONE = localStorage.getItem('basket');
+  return cardDataJSONE ? JSON.parse(cardDataJSONE) : [];
+}
+function setBasketLocalStorage(basket) {
+  localStorage.setItem('basket', JSON.stringify(basket));
 }
