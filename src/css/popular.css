@@ -1,1 +1,135 @@
 /* Popular block styles */
+.popular-container {
+  min-width: 320px;
+  max-width: 335px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.popular-tittle {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.16;
+}
+.popular-item {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 12px;
+  /* max-width: 335px; */
+}
+.popular-item:not(:last-child) {
+  margin-bottom: 14px;
+}
+.popular-card {
+  display: flex;
+}
+.popular-image-container {
+  width: 74px;
+  height: 74px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: var(--background);
+}
+.info-popular-card {
+  max-width: 152px;
+  padding-right: 55px;
+}
+.popular-name {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  margin-bottom: 12px;
+}
+.info-popular-item {
+  color: var(--grey);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16;
+}
+b {
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16;
+}
+.popular-image {
+  margin: 9px;
+}
+.popularbtn-basket {
+  display: inline-flex;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: var(--green);
+}
+.popularbtn-basket:hover {
+  background-color: var(--green);
+}
+.icon-check {
+  background-color: var(--green);
+  border-radius: 50%;
+}
+.add {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 9px;
+  margin-top: 9px;
+}
+.is-hidden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .popular-container {
+    max-width: 563px;
+  }
+  .popular-tittle {
+    font-size: 28px;
+    line-height: 1.14;
+  }
+  .popular-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
+  .popular-item {
+    max-width: 251px;
+    flex-basis: calc((100% - 13px * 1) / 2);
+  }
+  .popular-image-container {
+    width: 74px;
+    height: 74px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: var(--background);
+  }
+  .popular-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 13px;
+    row-gap: 13px;
+  }
+  .info-popular-card {
+    padding-right: 0;
+  }
+  .popular-name {
+    margin-bottom: 10px;
+  }
+  .add {
+    width: 152px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .popular-list {
+    display: block;
+  }
+  .popular-item:not(:last-child) {
+    margin-bottom: 14px;
+  }
+}
