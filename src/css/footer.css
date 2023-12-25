@@ -77,6 +77,10 @@
   height: 40px;
 }
 
+.footer-social-links:hover,.footer-social-links:focus {
+    background-color: #e8e8e24d
+}
+
 .social-icon {
   fill: var(--background);
   opacity: 0.8;
@@ -99,6 +103,14 @@
   color: rgba(232, 232, 226, 0.7);
   font-size: 14px;
   line-height: 1.28;
+}
+
+.subscribe-box {
+    width: 336px;
+    height: 160px;
+    top: 40px;
+    gap: 20px;
+
 }
 
 .subscribe-paragraph {
