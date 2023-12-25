@@ -1,7 +1,7 @@
 import { getAllPopular } from './fetchAPI';
 
-const iconShop = './img/icons/sprite.svg#icon-shop';
-const iconCheck = './img/icons/sprite.svg#icon-check';
+const iconShop = '/img/icons/sprite.svg#icon-shop';
+const iconCheck = '/img/icons/sprite.svg#icon-check';
 
 const popularList = document.querySelector('.popular-list');
 
@@ -13,13 +13,12 @@ async function getDataAllPopular() {
     console.log(error);
   }
 }
-console.log(getDataAllPopular());
 
-getDataAllPopular()
-  .then(createMarkUpPopular)
-  .catch(error => {
-    console.log(error);
-  });
+// getDataAllPopular()
+//   .then(createMarkUpPopular)
+//   .catch(error => {
+//     console.log(error);
+//   });
 
 function createMarkUpPopular(arr) {
   const markUp = arr.map(({ _id, img, name, category, size, popularity }) => {
@@ -55,7 +54,7 @@ function createMarkUpPopular(arr) {
   popularList.insertAdjacentHTML('beforeend', markUp.join(''));
 }
 
-popularList.addEventListener('click', onClick);
+// popularList.addEventListener('click', onClick);
 function onClick(event) {
   const targetButton = event.target.closest('.popularbtn-basket');
   if (!targetButton) return;
@@ -64,12 +63,13 @@ function onClick(event) {
   const basket = getBasketLocalStorage();
 
   if (basket.includes(id)) {
-    const check = targetButton.querySelector('.icon-check');
-    const shop = targetButton.querySelector('.icon-shop');
-    shop.classList.add('is-hidden');
-    check.classList.remove('is-hidden');
     return;
   }
+
+  const check = targetButton.querySelector('.icon-check');
+  const shop = targetButton.querySelector('.icon-shop');
+  shop.classList.add('is-hidden');
+  check.classList.remove('is-hidden');
   basket.push(id);
   setBasketLocalStorage(basket);
 }
@@ -80,3 +80,5 @@ function getBasketLocalStorage() {
 function setBasketLocalStorage(basket) {
   localStorage.setItem('basket', JSON.stringify(basket));
 }
+
+export { popularList, onClick, getDataAllPopular, createMarkUpPopular };

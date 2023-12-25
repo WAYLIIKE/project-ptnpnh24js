@@ -36,12 +36,18 @@ function getItemCountFromLocalArray() {
 function updateItemCountDisplay() {
   itemCountDisplay.textContent = getItemCountFromLocalArray();
 }
-addItemButton.addEventListener('click', function () {
-  addItemToLocalArray(Math.random());
-});
-removeItemButton.addEventListener('click', function () {
-  removeItemFromLocalArray(0);
-});
-updateItemCountDisplay();
+// addItemButton.addEventListener('click', function () {
+//   addItemToLocalArray(Math.random());
+// });
+// removeItemButton.addEventListener('click', function () {
+//   removeItemFromLocalArray(0);
+// });
+// updateItemCountDisplay();
 
-export { addItemButton, removeItemButton, updateItemCountDisplay };
+export {
+  addItemButton,
+  removeItemButton,
+  updateItemCountDisplay,
+  addItemToLocalArray,
+  removeItemFromLocalArray,
+};
