@@ -1,0 +1,70 @@
+<section class="emptyBasket_section">
+  <div class="container">
+    <div class="emptyBasket_card">
+      <div class="emptyBasket_icon">
+        <a href="./basket.html" class="emptyBasket_div">
+          <svg class="emptyBasket_svg">
+            <use href="./img/icons/sprite.svg#icon-shop"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div>
+        <p class="emptyBasket_cart">Cart (0)</p>
+      </div>
+    </div>
+
+    <picture class="emptyBasket_box">
+      <!-- 1440 -->
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./img/basket/basket-desktop.png    1x,
+          ./img/basket/basket-desktop@2x.png 2x
+        "
+        type="image/png"
+      />
+      <!-- 768 -->
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./img/basket/basket-desktop.png    1x,
+          ./img/basket/basket-desktop@2x.png 2x
+        "
+        type="image/png"
+      />
+      <!-- Mobile -->
+      <source
+        media="(max-width: 767px)"
+        srcset="
+          ./img/basket/basket-mobile.png    1x,
+          ./img/basket/basket-mobile@2x.png 2x
+        "
+        type="image/png"
+      />
+      <img
+        class="emptyBasket_img"
+        src="./img/basket/basket-mobile.png"
+        alt="basket"
+        width="132"
+        height="114"
+        loading="lazy"
+      />
+    </picture>
+
+    <h3 class="emptyBasket_header">
+      <span class="emptyBasket_black">Your basket is</span>
+      empty...
+    </h3>
+
+    <p class="emptyBasket_message">
+      Go to the main page to select your favorite products and add them to the
+      cart.
+    </p>
+  </div>
+</section>
+<div class="container">
+  <button class="open-modal" type="button" data-modal-open>
+    Тестова кнопка сабміт
+  </button>
+</div>
