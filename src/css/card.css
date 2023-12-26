@@ -1,9 +1,6 @@
 /* Card of product styles */
 
 .products-container {
-  max-width: 335px;
-  margin-left: auto;
-  margin-right: auto;
   justify-content: center;
   align-items: center;
 }

@@ -3,7 +3,6 @@ const allList = document.querySelector('.js-list');
 async function getDataAllProducts() {
   try {
     const result = await getAllProducts();
-    console.log(result);
     allList.insertAdjacentHTML('beforeend', createMarkupAll(result.results));
   } catch (error) {
     console.log(error);
@@ -16,8 +15,8 @@ getDataAllProducts();
 function createMarkupAll(arr) {
   return arr
     .map(
-      ({ id, img, name, category, size, popularity, price }) => `
-   <li  class="product-card" data-id="${id}">
+      ({ _id, img, name, category, size, popularity, price }) => `
+   <li  class="product-card" data-id="${_id}">
    <div class="product-cart-container">
    <div class="product-image-container">
       <img class="product-img" src="${img}" alt="${name}" width="140px" height="140px">
@@ -60,22 +59,26 @@ function createMarkupAll(arr) {
 const cartIcon = './img/icons/sprite.svg#icon-shop';
 const cartIconCheck = './img/icons/sprite.svg#icon-check';
 
-productsContainer.addEventListener('click', handlerClick);
+allList.addEventListener('click', handlerClick);
 
 function handlerClick(event) {
   const targetButton = event.target.closest('.product-add-btn');
   if (!targetButton) return;
   const card = event.target.closest('.product-card');
+  console.log(card)
   const id = card.dataset.id;
+  console.log(id)
   const basket = getBasketLocalStorage();
 
   if (basket.includes(id)) {
-    const check = targetButton.querySelector('.icon-check');
-    const shop = targetButton.querySelector('.icon-shop');
-    shop.classList.add('is-hidden');
-    check.classList.remove('is-hidden');
     return;
   }
+  const check = targetButton.querySelector('.cart-icon-check');
+  const shop = targetButton.querySelector('.cart-icon');
+  console.log(check);
+  console.log(shop);
+  shop.classList.add('is-hidden');
+  check.classList.remove('is-hidden');
   basket.push(id);
   setBasketLocalStorage(basket);
 }
