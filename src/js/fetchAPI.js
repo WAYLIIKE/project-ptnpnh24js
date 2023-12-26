@@ -52,7 +52,7 @@ async function getProductByID(id) {
   const BASE_URL = 'https://food-boutique.b.goit.study/api/products/';
   try {
     const result = await axios.get(`${BASE_URL}${id}`);
-    return result.data;
+    console.log(result);
   } catch (error) {
     return error.message;
   }
