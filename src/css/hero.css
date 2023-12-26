@@ -1,1 +1,126 @@
 /* Hero section styles */
+/* Hero section styles */
+.hero-section {
+  margin-top: 72px;
+  margin-bottom: 74px;
+}
+@media only screen and (min-width: 768px) {
+  .hero-section {
+    margin-top: 116px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .hero-section {
+    margin-top: 77px;
+    margin-bottom: 100px;
+  }
+}
+.hero-title {
+  max-width: 335px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+
+  color: var(--black);
+  text-align: center;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.09; /* 109.091% */
+  letter-spacing: -0.02em;
+}
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    max-width: 654px;
+    margin-bottom: 20px;
+
+    font-size: 80px;
+    line-height: 1; /* 100% */
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .hero-title {
+    max-width: 1042px;
+  }
+}
+.hero-title-span {
+  color: var(--green);
+}
+.hero-info {
+  max-width: 292px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+
+  color: var(--grey);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.28; /* 128.571% */
+}
+@media only screen and (min-width: 768px) {
+  .hero-info {
+    max-width: 492px;
+    margin-bottom: 40px;
+
+    font-size: 18px;
+    line-height: 1.33; /* 133.333% */
+  }
+}
+
+.hero-image {
+  position: relative;
+  max-width: 335px;
+  height: 480px;
+  margin: 0 auto;
+  background-color: var(--green);
+  background-image: url(/img/hero/mobile_hero/women-sportswear-working-out-outdoors1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+}
+@media only screen and (min-resolution: 192dpi) {
+  .hero-image {
+    background-image: url(/img/hero/mobile_hero/women-sportswear-working-out-outdoors1@2x.jpg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-image {
+    max-width: 704px;
+    height: 580px;
+    background-image: url(/img/hero/tablet_hero/women-sportswear-working-out-outdoors1.jpg);
+    border-radius: 50px;
+  }
+  @media only screen and (min-resolution: 192dpi) {
+    .hero-image {
+      background-image: url(/img/hero/tablet_hero/women-sportswear-working-out-outdoors1@2x.jpg);
+    }
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .hero-image {
+    max-width: 1240px;
+    height: 350px;
+    background-image: url(/img/hero/desktop_hero/women-sportswear-working-out-outdoors1.jpg);
+  }
+  @media only screen and (min-resolution: 192dpi) {
+    .hero-image {
+      background-image: url(/img/hero/desktop_hero/women-sportswear-working-out-outdoors1@2x.jpg);
+    }
+  }
+}
+.hero-image-item {
+  position: absolute;
+  top: -7px;
+  right: 8px;
+}
+@media only screen and (min-width: 768px) {
+  .hero-image-item {
+    top: -30px;
+    right: 10px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .hero-image-item {
+    top: -50px;
+    right: 20px;
+  }
+}

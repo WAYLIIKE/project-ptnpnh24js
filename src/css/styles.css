@@ -15,8 +15,3 @@
 @import url('./modalErrorSubscription.css');
 @import url('./modalOrder.css');
 @import url('./modalSubscription.css');
-
-.div {
-  text-align: center;
-  color: hotpink;
-}
