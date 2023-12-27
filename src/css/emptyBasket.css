@@ -1,5 +1,7 @@
 /* Empty basket styles */
-
+.emptyBasket_section {
+  margin-top: 72px;
+}
 .emptyBasket_div {
   background-color: var(--green);
   width: 38px;
@@ -62,6 +64,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .emptyBasket_section {
+    margin-top: 99px;
+  }
   .emptyBasket_header,
   .emptyBasket_black {
     font-size: 20px;
@@ -91,6 +96,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .emptyBasket_section {
+    margin-top: 81px;
+  }
   .emptyBasket_card {
     margin-bottom: 155px;
   }
