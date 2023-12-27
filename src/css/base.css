@@ -66,10 +66,8 @@ header {
   margin-top: 18px;
 }
 
-@media screen and (min-width: 768px) {
-  header {
-    margin-top: 24px;
-  }
+footer {
+  margin-top: 80px;
 }
 
 .container {
@@ -85,10 +83,22 @@ header {
   .container {
     max-width: 704px;
   }
+
+  header {
+    margin-top: 24px;
+  }
+
+  footer {
+    margin-top: 100px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1240px;
+  }
+
+  footer {
+    margin-top: 140px;
   }
 }

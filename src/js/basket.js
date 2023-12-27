@@ -24,3 +24,11 @@ import { modalOrder } from './modalOrder';
 modalOrder();
 
 ////////////////////////////////////////////////////////////////////////////
+
+// SUBSCRIPTION SCRIPT
+
+import { formFooter, subscriptionSubmit } from './footer';
+
+formFooter.addEventListener('submit', subscriptionSubmit);
+
+////////////////////////////////////////////////////////////////////////////

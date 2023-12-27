@@ -1,7 +1,10 @@
 import { getAllPopular } from './fetchAPI';
+import sprite from '/img/icons/sprite.svg';
 
-const iconShop = '/img/icons/sprite.svg#icon-shop';
+// import iconShop from '/img/icons/shop.svg';
+// import iconCheck from '/img/icons/iconCheck.svg';
 const iconCheck = '/img/icons/sprite.svg#icon-check';
+const iconShop = '/img/icons/sprite.svg#icon-shop';
 
 const popularList = document.querySelector('.popular-list');
 
@@ -39,14 +42,13 @@ function createMarkUpPopular(arr) {
     </div>
     </div>
     <button class="popularbtn-basket " type="button">
-   
-    <svg class = "icon-check  is-hidden"  width="12" height="12">
-    <use href="${iconCheck}"></use></svg>
-   
-   
-    <svg class="icon-shop" width="12" height="12" >
-    <use href="${iconShop}"></use></svg>
-    
+
+    <svg class = "icon-check is-hidden"  width="12" height="12">
+    <use href="${sprite}#icon-check"></use></svg>
+
+    <svg class="icon-shop" width="12" height="12">
+    <use href="${sprite}#icon-shop"></use></svg>
+
     </button>
     </div>
     </li>`;
