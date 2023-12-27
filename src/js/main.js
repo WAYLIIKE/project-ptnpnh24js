@@ -1,16 +1,3 @@
-// MODAL SUBSCRIPTION //
-import {
-  openwindow,
-  closemodal,
-  closeModalOnEsc,
-  openButton,
-  closeButton,
-} from './modalSubscription';
-
-document.addEventListener('keydown', closeModalOnEsc);
-openButton.addEventListener('click', openwindow);
-closeButton.addEventListener('click', closemodal);
-
 ////////////////////////////////////////////////////////////////////////////
 
 // COUNT OF BASKET //
@@ -32,13 +19,11 @@ updateItemCountDisplay();
 
 ////////////////////////////////////////////////////////////////////////////
 
-// MODAL ERROR SUBSCRIPTION //
+// SUBSCRIPTION SCRIPT
 
-import { modalErrorSubscription } from './modalErrorSubscription';
+import { formFooter, subscriptionSubmit } from './footer';
 
-modalErrorSubscription();
-
-////////////////////////////////////////////////////////////////////////////
+formFooter.addEventListener('submit', subscriptionSubmit);
 
 ////////////////////////////////////////////////////////////////////////////
 

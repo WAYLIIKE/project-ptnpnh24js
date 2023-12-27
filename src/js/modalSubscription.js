@@ -1,9 +1,9 @@
 const openButton = document.querySelector('.bob');
 const modal = document.querySelector('.backdrop');
 const closeButton = document.querySelector('.button-modal-icon');
+
 document.addEventListener('keydown', closeModalOnEsc);
 openButton.addEventListener('click', openwindow);
-closeModalOnEsc;
 closeButton.addEventListener('click', closemodal);
 
 function openwindow() {

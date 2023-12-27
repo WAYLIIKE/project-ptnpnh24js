@@ -1,7 +1,7 @@
 import { getAllPopular } from './fetchAPI';
 
-const iconShop = '/img/icons/sprite.svg#icon-shop';
-const iconCheck = '/img/icons/sprite.svg#icon-check';
+import iconShop from '/img/icons/shop.svg';
+import iconCheck from '/img/icons/iconCheck.svg';
 
 const popularList = document.querySelector('.popular-list');
 
