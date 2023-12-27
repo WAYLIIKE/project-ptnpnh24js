@@ -8,13 +8,24 @@ const container = document.querySelector('.discount-list')
 async function productsApi() {
     try {
         const result = await getAllDiscount()
+        const randomProducts = getRandomProducts(result, 2);
+        
         // console.log(result);
-        container.insertAdjacentHTML("beforeend", createMarcupDiscount(result))
+       container.insertAdjacentHTML("beforeend", createMarcupDiscount(randomProducts));
     } catch (error) {
         console.log(error.message);
     }
 }
+
+function getRandomProducts(arr, number) {
+    const random = arr.sort(() => 0.5 - Math.random());
+    return random.slice(0, number);
+}
+
+
 productsApi()
+
+
 
 
 function createMarcupDiscount(arr) {
@@ -53,16 +64,19 @@ function hendleClick(event) {
     }
     const currentProduct = event.target.closest('.discount-product');
     console.log("currentProduct", currentProduct);
+
     const id = currentProduct.dataset.id;
     console.log("id", id);
+
     const targetBtn = event.target.closest('.discount-btn');
     console.log("target", targetBtn);
+
     if (!targetBtn) {
         return;
     }; 
-    const bask = LocalStorageGetBask();
+    const basket = LocalStorageGetBask();
 
-    if (bask.includes(id)) {
+    if (basket.includes(id)) {
     return;
   }
 
@@ -71,14 +85,18 @@ function hendleClick(event) {
 
     shopIcon.classList.add('is-hidden');
     checkIcon.classList.remove('is-hidden');
-    bask.push(id);
-    LocalStorageSetBask(bask);
+    basket.push(id);
+    LocalStorageSetBask(basket);
 }
 
 function LocalStorageGetBask() {
-  const cardsData = localStorage.getItem('bask');
+  const cardsData = localStorage.getItem('basket');
   return cardsData ? JSON.parse(cardsData) : [];
 }
-function LocalStorageSetBask(bask) {
-  localStorage.setItem('bask', JSON.stringify(bask));
+function LocalStorageSetBask(basket) {
+  localStorage.setItem('basket', JSON.stringify(basket));
 }
+
+
+
+export { productsApi, createMarcupDiscount, hendleClick, LocalStorageGetBask, LocalStorageSetBask };
