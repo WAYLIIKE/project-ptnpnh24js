@@ -38,3 +38,66 @@
   font-weight: 500;
   line-height: 1.28px;
 }
+*/
+/* Стилі для модального вікна */
+.modal {
+  display: none; /* Початково ховаємо модальне вікно */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний колір фону */
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+}
+.modal-card-box {
+  display: flex;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 335px;
+  border-radius: 20px;
+  background: var(--background);
+}
+.modal-btn-open {
+  border-radius: 30px;
+  background: var(--green);
+  display: inline-flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 116px;
+  height: 42px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28px;
+}
+.image-containet {
+  max-width: 240px;
+
+  background-color: var(--background);
+  border-radius: 10px;
+}
+/* .card-image {
+}
+.card-name {
+}
+.info-card-item {
+}
+b {
+}
+.button-modal-close {
+}
+.modal-btn-add {
+}
+.icon-add {
+} */

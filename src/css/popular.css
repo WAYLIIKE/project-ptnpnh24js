@@ -29,6 +29,7 @@
   margin-right: 10px;
   border-radius: 10px;
   background-color: var(--background);
+  margin-right: 24px;
 }
 .info-popular-card {
   max-width: 152px;
