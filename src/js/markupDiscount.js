@@ -9,8 +9,6 @@ async function productsApi() {
     try {
         const result = await getAllDiscount()
         const randomProducts = getRandomProducts(result, 2);
-        
-        // console.log(result);
        container.insertAdjacentHTML("beforeend", createMarcupDiscount(randomProducts));
     } catch (error) {
         console.log(error.message);
@@ -63,14 +61,8 @@ function hendleClick(event) {
         return;
     }
     const currentProduct = event.target.closest('.discount-product');
-    console.log("currentProduct", currentProduct);
-
     const id = currentProduct.dataset.id;
-    console.log("id", id);
-
     const targetBtn = event.target.closest('.discount-btn');
-    console.log("target", targetBtn);
-
     if (!targetBtn) {
         return;
     }; 
