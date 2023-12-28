@@ -56,8 +56,8 @@ function createMarkupAll(arr) {
     .join('');
 }
 // додавання в кошик
-const cartIcon = './img/icons/sprite.svg#icon-shop';
-const cartIconCheck = './img/icons/sprite.svg#icon-check';
+const cartIcon = '/img/icons/sprite.svg#icon-shop';
+const cartIconCheck = '/img/icons/sprite.svg#icon-check';
 
 allList.addEventListener('click', handlerClick);
 
@@ -65,9 +65,9 @@ function handlerClick(event) {
   const targetButton = event.target.closest('.product-add-btn');
   if (!targetButton) return;
   const card = event.target.closest('.product-card');
-  console.log(card)
+  console.log(card);
   const id = card.dataset.id;
-  console.log(id)
+  console.log(id);
   const basket = getBasketLocalStorage();
 
   if (basket.includes(id)) {
