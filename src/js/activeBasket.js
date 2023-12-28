@@ -28,9 +28,27 @@ const storedProducts = JSON.parse(localStorage.getItem('products')) || {};
 const totalAmountOfElements = Object.keys(storedProducts).length;
 
 deleteAllButton.addEventListener('click', deleteList);
-deleteElement.forEach(button => {
-  button.addEventListener('click', deleteElementHandle);
-});
+listInBasket.addEventListener('click', handleDeleteClick);
+
+function handleDeleteClick(event) {
+  const deleteButton = event.target.closest('.delete-elem-button');
+
+  if (deleteButton) {
+    const productId = deleteButton.getAttribute('data-id');
+
+    delete storedProducts[productId];
+
+    const listItem = deleteButton.closest('.card-container');
+    if (listItem && listItem.parentNode) {
+      listItem.parentNode.removeChild(listItem);
+    }
+
+    updateCartHeader();
+    updateTotalPrice();
+
+    localStorage.setItem('products', JSON.stringify(storedProducts));
+  }
+}
 
 function deleteList() {
   cartHeader.textContent = 'CART (0)';
@@ -39,24 +57,8 @@ function deleteList() {
   localStorage.clear();
 }
 
-function deleteElementHandle(event) {
-  console.log('check');
-  const deleteButton = event.currentTarget;
-  const productId = deleteButton.dataset.id;
-
-  if (storedProducts[productId]) {
-    delete storedProducts[id];
-  }
-
-  const listItem = deleteButton.closest('.card-container');
-  listItem.remove();
-
-  updateCartHeader();
-  updateTotalPrice();
-}
-
 //!get Product By ID
-const id = '640c2dd963a319ea671e3860';
+const id = '640c2dd963a319ea671e3814';
 async function getProductByID(id) {
   const BASE_URL = 'https://food-boutique.b.goit.study/api/products/';
   try {
@@ -75,27 +77,22 @@ async function logProductsApi() {
     if (result) {
       addToLocalStorage(id, result);
 
-      // Clear the existing content before updating
       listInBasket.innerHTML = '';
 
-      // Update the storedProducts with the latest count
       Object.values(storedProducts).forEach(product => {
         const existingListItem = listInBasket.querySelector(
           `[data-id="${product._id}"]`
         );
 
         if (existingListItem) {
-          // If the product is already in the list, update the counter
           const counterSpan = existingListItem.querySelector('.counter');
           if (counterSpan) {
             counterSpan.textContent = product.counter || 1;
           }
         } else {
-          // If the product is not in the list, add a new entry
           const newCard = createProductCard(product);
           listInBasket.insertAdjacentHTML('beforeend', newCard);
 
-          // Attach the event listener to the delete button of the newly created card
           const deleteButton = listInBasket.querySelector(
             `[data-id="${product._id}"] .delete-elem-button`
           );
@@ -124,6 +121,7 @@ function addToLocalStorage(id, product) {
   }
   localStorage.setItem('products', JSON.stringify(storedProducts));
 }
+
 
 function createProductCard(product) {
   return `
@@ -181,6 +179,8 @@ function createProductCard(product) {
   `;
 }
 
+
+// Updating quantity
 function updateCartHeader() {
   const updatedTotalAmount = Object.keys(storedProducts).length;
   cartHeader.textContent = `CART (${updatedTotalAmount})`;
