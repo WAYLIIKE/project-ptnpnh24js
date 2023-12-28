@@ -1,8 +1,5 @@
 import { getProductByID } from './fetchAPI';
-import axios from 'axios';
 import sprite from '/img/icons/sprite.svg';
-
-console.log(getProductByID('640c2dd963a319ea671e383b'));
 
 // Отримуємо всі елементи з класом "product-card"
 const productCards = document.querySelectorAll('.product-card');
@@ -57,7 +54,6 @@ productCards.forEach(card => {
     try {
       // Отримуємо дані про продукт і відображаємо модальне вікно
       const productData = await getProductByID(productId);
-      console.log(productData);
       openModalWithData(productData);
     } catch (error) {
       console.error(error);
