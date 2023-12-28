@@ -29,7 +29,7 @@ function createMarcupDiscount(arr) {
     <li data-id="${_id}" class="discount-product">
     <div class="discount-image">
         <svg class="discount-list-item" width="60" heigh="60">
-        <use href="./img/icons/sprite.svg#icon-discount"></use>
+        <use href="${sprite}#icon-discount"></use>
         </svg>
         <img src="${img}" alt="name" class="discount-image-cart"/>
     </div>
