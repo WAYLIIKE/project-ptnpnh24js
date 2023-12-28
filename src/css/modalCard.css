@@ -1,73 +1,36 @@
 /* Modal card styles */
-.is-visible {
-  opacity: 1;
-  visibility: visible;
-}
+
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(1, 1, 1, 0.4);
-  width: 100%;
-  height: 100%;
   transition: var(--animation);
-  opacity: 0;
-  visibility: hidden;
-}
-.modal-card-box {
-  display: flex;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%) translateY(-50%);
-  max-width: 335px;
-  border-radius: 20px;
-  background: var(--background);
-}
-.modal-btn-open {
-  border-radius: 30px;
-  background: var(--green);
-  display: inline-flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  min-width: 116px;
-  height: 42px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.28px;
-}
-*/
-/* Стилі для модального вікна */
-.modal {
-  display: none; /* Початково ховаємо модальне вікно */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний колір фону */
 }
 .modal-content {
+  border: 1px solid black;
+  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-}
-.modal-card-box {
-  display: flex;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%) translateY(-50%);
-  max-width: 335px;
+  background: var(--white);
+  width: 335px;
   border-radius: 20px;
-  background: var(--background);
 }
-.modal-btn-open {
+.modal-box {
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
+.modal-btn {
+  display: block;
+  border: none;
+  cursor: pointer;
   border-radius: 30px;
   background: var(--green);
   display: inline-flex;
@@ -80,24 +43,100 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28px;
+  color: var(--white);
 }
-.image-containet {
-  max-width: 240px;
-
+.img-box {
   background-color: var(--background);
+  margin-bottom: 20px;
+  max-width: 295px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
 }
-/* .card-image {
+.card-modal-name {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  margin-bottom: 10px;
 }
-.card-name {
+.card-modal-data {
+  display: flex;
+  width: 295px;
+  gap: 9px;
+  margin-bottom: 9px;
 }
-.info-card-item {
+.info-modal-item {
+  color: rgba(1, 1, 1, 0.3);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16;
 }
 b {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16px;
 }
-.button-modal-close {
+.modal-desc {
+  color: rgba(1, 1, 1, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  margin-top: 20px;
 }
-.modal-btn-add {
+.button-icon-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
 }
-.icon-add {
-} */
+.card-image {
+  margin: 0 auto;
+}
+.modal-price-block {
+  margin-top: 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 133px;
+}
+.modal-price {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+@media screen and (min-width: 768px) {
+  .modal-content {
+    width: 600px;
+  }
+  .modal-box {
+    padding: 40px 0 40px 40px;
+  }
+  .modal-btn {
+    min-width: 130px;
+    padding: 10px 28px;
+    font-size: 16px;
+    line-height: 1.25;
+    height: 40px;
+  }
+  .img-box {
+    width: 240px;
+    height: 212px;
+    margin-bottom: 0;
+    margin-right: 24px;
+  }
+  .card-info {
+    display: flex;
+  }
+  .modal-price-block {
+    margin-top: 48px;
+    gap: 339px;
+  }
+  .modal-desc {
+    width: 256px;
+  }
+}

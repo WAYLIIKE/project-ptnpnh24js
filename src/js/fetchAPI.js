@@ -53,7 +53,9 @@ async function getProductByID(id) {
   try {
     const result = await axios.get(`${BASE_URL}${id}`);
     console.log(result);
+    return result.data;
   } catch (error) {
     return error.message;
   }
 }
+console.log(getProductByID('640c2dd963a319ea671e383b'));
