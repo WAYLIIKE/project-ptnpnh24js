@@ -1,9 +1,8 @@
 /* Popular block styles */
 .popular-container {
-  min-width: 320px;
+  min-width: 300px;
   max-width: 335px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 80px;
 }
 .popular-tittle {
   margin-bottom: 20px;
@@ -15,7 +14,6 @@
   background-color: var(--white);
   border-radius: 10px;
   padding: 12px;
-  /* max-width: 335px; */
 }
 .popular-item:not(:last-child) {
   margin-bottom: 14px;
@@ -91,6 +89,7 @@ b {
 @media screen and (min-width: 768px) {
   .popular-container {
     max-width: 563px;
+    margin-bottom: 64px;
   }
   .popular-tittle {
     font-size: 28px;
@@ -127,10 +126,21 @@ b {
   }
 }
 @media screen and (min-width: 1440px) {
+  .popular-container {
+    min-width: 275px;
+  }
   .popular-list {
     display: block;
   }
   .popular-item:not(:last-child) {
     margin-bottom: 14px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .pop-dis-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
