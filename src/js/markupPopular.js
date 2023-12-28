@@ -1,6 +1,8 @@
 import { getAllPopular } from './fetchAPI';
 import { updateItemCountDisplay } from './header';
 import sprite from '/img/icons/sprite.svg';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const popularList = document.querySelector('.popular-list');
 
@@ -31,13 +33,13 @@ function createMarkUpPopular(arr) {
     <b>${popularity}</b></p>
     </div>
     </div>
-    <button class="popularbtn-basket " type="button">
+    <button class="popularbtn-basket unused" type="button">
 
-    <svg class = "icon-check is-hidden"  width="12" height="12">
-    <use href="${sprite}#icon-check"></use></svg>
+    <svg class = "icon-check is-hidden unused"  width="12" height="12">
+    <use class="unused" href="${sprite}#icon-check"></use></svg>
 
-    <svg class="icon-shop" width="12" height="12">
-    <use href="${sprite}#icon-shop"></use></svg>
+    <svg class="icon-shop unused" width="12" height="12">
+    <use class="unused" href="${sprite}#icon-shop"></use></svg>
 
     </button>
     </div>
@@ -54,6 +56,11 @@ function onClick(event) {
   const basket = getBasketLocalStorage();
 
   if (basket.includes(id)) {
+    iziToast.warning({
+      title: 'Warning',
+      message: 'You`ve already add this product to basket!',
+      position: 'topRight',
+    });
     return;
   }
 
@@ -73,4 +80,11 @@ function setBasketLocalStorage(basket) {
   localStorage.setItem('basket', JSON.stringify(basket));
 }
 
-export { popularList, onClick, getDataAllPopular, createMarkUpPopular };
+export {
+  popularList,
+  onClick,
+  getDataAllPopular,
+  createMarkUpPopular,
+  getBasketLocalStorage,
+  setBasketLocalStorage,
+};

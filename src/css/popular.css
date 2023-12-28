@@ -14,6 +14,7 @@
   background-color: var(--white);
   border-radius: 10px;
   padding: 12px;
+  cursor: pointer;
 }
 .popular-item:not(:last-child) {
   margin-bottom: 14px;
@@ -31,7 +32,7 @@
 }
 .info-popular-card {
   max-width: 152px;
-  padding-right: 55px;
+  margin-right: auto;
 }
 .popular-name {
   font-size: 18px;
@@ -116,7 +117,7 @@ b {
     row-gap: 13px;
   }
   .info-popular-card {
-    padding-right: 0;
+    margin: 0;
   }
   .popular-name {
     margin-bottom: 10px;
@@ -138,9 +139,18 @@ b {
 }
 
 @media screen and (min-width: 1440px) {
+  .popular-item {
+    transition: box-shadow var(--animation);
+  }
+
   .pop-dis-container {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+  }
+
+  .popular-item:hover,
+  .popular-item:focus {
+    box-shadow: var(--shadow);
   }
 }

@@ -7,4 +7,5 @@
   --white: #fafafa;
   --grey: rgba(1, 1, 1, 0.5);
   --background: #e8e8e2;
+  --shadow: 6px 6px 18px -12px rgba(66, 68, 90, 1);
 }

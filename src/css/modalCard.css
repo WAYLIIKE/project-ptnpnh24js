@@ -18,13 +18,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: var(--white);
-  width: 335px;
+  width: 310px;
   border-radius: 20px;
 }
 .modal-box {
   padding-top: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 8px;
   padding-bottom: 40px;
 }
 .modal-btn {
@@ -44,7 +43,13 @@
   font-weight: 500;
   line-height: 1.28px;
   color: var(--white);
+  transition: background-color var(--animation);
 }
+
+.modal-btn:hover {
+  background-color: var(--hover-green);
+}
+
 .img-box {
   background-color: var(--background);
   margin-bottom: 20px;
@@ -85,8 +90,8 @@ b {
 }
 .button-icon-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 9px;
+  right: 9px;
   margin-bottom: 4px;
   display: flex;
   justify-content: center;

@@ -17,12 +17,13 @@
   border-radius: 15px;
   background: var(--white);
   padding: 16px;
+  cursor: pointer;
 }
 
 .discount-list-item {
   position: absolute;
   margin-top: -57px;
-  margin-left: 250px;
+  margin-left: 227px;
 }
 
 .discount-info-cart {
@@ -114,12 +115,6 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 345px) {
-  .discount-list-item {
-    margin-left: 225px;
-  }
-}
-
 @media screen and (min-width: 1440px) {
   .discount-image-cart {
     max-width: 105px;
@@ -154,6 +149,15 @@
   }
   .discount-product:not(:last-child) {
     margin-bottom: 20px;
+  }
+
+  .discount-product {
+    transition: box-shadow var(--animation);
+  }
+
+  .discount-product:hover,
+  .discount-product:focus {
+    box-shadow: var(--shadow);
   }
 }
 

@@ -1,6 +1,8 @@
 import { getAllDiscount } from './fetchAPI';
 import sprite from '/img/icons/sprite.svg';
 import { updateItemCountDisplay } from './header';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const container = document.querySelector('.discount-list');
 
@@ -37,13 +39,13 @@ function createMarcupDiscount(arr) {
         <p class="discount-title-name">${name}</p>
         <div class="discount-info-cart">
             <p class="discount-price">$${price}</p>
-            <button class="discount-btn" type="button">
+            <button class="discount-btn unused" type="button">
 
-            <svg class = "icon-check is-hidden"  width="12" height="12">
-            <use href="${sprite}#icon-check"></use></svg>
+            <svg class = "icon-check is-hidden unused"  width="12" height="12">
+            <use class="unused" href="${sprite}#icon-check"></use></svg>
 
-            <svg class="icon-shop" width="12" height="12">
-            <use href="${sprite}#icon-shop"></use></svg>
+            <svg class="icon-shop unused" width="12" height="12">
+            <use class="unused" href="${sprite}#icon-shop"></use></svg>
 
         </button>
         </div>
@@ -68,6 +70,11 @@ function hendleClick(event) {
   const basket = LocalStorageGetBask();
 
   if (basket.includes(id)) {
+    iziToast.warning({
+      title: 'Warning',
+      message: 'You`ve already add this product to basket!',
+      position: 'topRight',
+    });
     return;
   }
 
@@ -89,4 +96,4 @@ function LocalStorageSetBask(basket) {
   localStorage.setItem('basket', JSON.stringify(basket));
 }
 
-export { productsApi };
+export { productsApi, container };

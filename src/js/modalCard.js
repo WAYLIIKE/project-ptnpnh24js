@@ -1,5 +1,9 @@
 import { getProductByID } from './fetchAPI';
 import sprite from '/img/icons/sprite.svg';
+import { getBasketLocalStorage, setBasketLocalStorage } from './markupPopular';
+import { updateItemCountDisplay } from './header';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 // Отримуємо всі елементи з класом "product-card"
 const productCards = document.querySelectorAll('.product-card');
@@ -23,7 +27,7 @@ function openModalWithData(object) {
        </div>
        </div>
        <div class="modal-price-block" >
-      <p class="modal-price">${price}</p>
+      <p class="modal-price">$${price}</p>
       <button type="button" class="modal-btn">
         Add to
         <svg  width="18" height="18">
@@ -33,7 +37,7 @@ function openModalWithData(object) {
       </div>
       <button class="button-icon-close" type="button">
         <svg class="modal-close">
-          <use href="./img/icons/sprite.svg#icon-close"></use>
+          <use href="${sprite}#icon-close"></use>
         </svg>
     </div>
     </div>
@@ -68,3 +72,24 @@ modal.addEventListener('click', function (event) {
     modal.style.display = 'none'; // Ховаємо модальне вікно при кліку на кнопку закриття
   }
 });
+
+modal.addEventListener('click', onClickModal);
+function onClickModal(event) {
+  const targetButton = event.target.closest('.modal-btn');
+  if (!targetButton) return;
+  const productId = event.target.closest('.modal-box').getAttribute('data-id');
+  const basket = getBasketLocalStorage();
+  if (basket.includes(productId)) {
+    iziToast.warning({
+      title: 'Warning',
+      message: 'You`ve already add this product to basket!',
+      position: 'topRight',
+    });
+    return;
+  }
+  basket.push(productId);
+  setBasketLocalStorage(basket);
+  updateItemCountDisplay();
+}
+
+export { openModalWithData };
