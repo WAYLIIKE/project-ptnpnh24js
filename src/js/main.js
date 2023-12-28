@@ -45,3 +45,9 @@ getDataAllPopular()
 popularList.addEventListener('click', onClick);
 
 ////////////////////////////////////////////////////////////////////////////
+
+// DISCOUNT DIV SCRIPT
+
+import { productsApi } from './markupDiscount';
+
+productsApi();
