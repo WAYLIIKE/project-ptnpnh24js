@@ -40,13 +40,13 @@ class ShoppingCart {
       }
     });
 
-    this.form.addEventListener('submit', (event) => {
+    this.form.addEventListener('submit', event => {
       const email = this.input.value;
 
       const formDataJSON = JSON.stringify(email);
 
       localStorage.setItem('formData', formDataJSON);
-    })
+    });
   }
 
   handleDeleteClick(event) {
@@ -90,7 +90,6 @@ class ShoppingCart {
     try {
       const id = '640c2dd963a319ea671e385f';
       const result = await this.getProductByID(id);
-      console.log(result);
 
       if (result) {
         this.addToLocalStorage(id, result);
@@ -247,6 +246,4 @@ class ShoppingCart {
 
 const shoppingCart = new ShoppingCart();
 
-shoppingCart.logProductsApi();
-shoppingCart.logProductsApi();
 shoppingCart.logProductsApi();

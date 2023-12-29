@@ -27,22 +27,26 @@ modalOrder();
 
 // SUBSCRIPTION SCRIPT
 
-import { formFooter, subscriptionSubmit } from './footer';
+import { subscriptionSubmit } from './footer';
 
-formFooter.addEventListener('submit', subscriptionSubmit);
+const formOrder = document.querySelector('.form-button');
+
+formOrder.addEventListener('submit', subscriptionSubmit);
 
 ////////////////////////////////////////////////////////////////////////////
 
 // MAIN LOGIC OF BASKET
 
 const emptyBasket = document.querySelector('.emptyBasket_section');
+const activeBasket = document.querySelector('.active-basket-container');
 
 function isBasketActive() {
+  activeBasket.style.display = 'none';
   let storedArray = localStorage.getItem('basket');
   if (storedArray) {
     emptyBasket.style.display = 'none';
+    activeBasket.style.display = '';
     storedArray = JSON.parse(storedArray);
-    console.log(storedArray);
   } else {
     emptyBasket.style.display = '';
   }
