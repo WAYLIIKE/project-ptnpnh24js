@@ -98,20 +98,18 @@
 
 .categories-filter-wrapper {
   position: relative;
-  display: inline-block;
 }
 .categories-filter-select {
-  width: 335px;
+  max-width: 335px;
   height: 48px;
   border-radius: 30px;
   padding: 0px 20px;
-
   border: 1px solid rgba(1, 1, 1, 0.3);
   background: none;
   appearance: none;
   outline: 0;
-
   cursor: pointer;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .categories-filter-select {

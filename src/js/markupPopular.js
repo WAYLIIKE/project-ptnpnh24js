@@ -16,7 +16,8 @@ async function getDataAllPopular() {
 }
 
 function createMarkUpPopular(arr) {
-  const markUp = arr.map(({ _id, img, name, category, size, popularity }) => {
+  const markUp = arr.map(({ _id, img, name, size, category, popularity }) => {
+    const updCategory = category.split('_').join(' ');
     return `<li class="popular-item" data-id='${_id}'>
     <div class="popular-card">
     <div class="popular-image-container">
@@ -25,7 +26,7 @@ function createMarkUpPopular(arr) {
     <div class="info-popular-card">
     <h4 class="popular-name">${name}</h4>
     <p class="info-popular-item">Category:
-    <b>${category}</b></p>
+    <b>${updCategory}</b></p>
     <div class="add">
     <p class="info-popular-item">Size: 
     <b>${size}</b></p>

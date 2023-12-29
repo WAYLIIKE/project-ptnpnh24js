@@ -10,6 +10,7 @@ const productCards = document.querySelectorAll('.product-card');
 // Функція для відкриття модального вікна з даними продукту
 function openModalWithData(object) {
   const { _id, img, name, category, size, popularity, desc, price } = object;
+  const updCategory = category.split('_').join(' ');
   const modalContent = `
     <div class="modal-box"  data-id='${_id}'>
     <div class="card-info">
@@ -19,7 +20,7 @@ function openModalWithData(object) {
       <div class="modal-tablet ">
       <h4 class="card-modal-name">${name}</h4>
       <div class="card-modal-data">
-      <p class="info-modal-item">Category: <b>${category}</b></p>
+      <p class="info-modal-item">Category: <b>${updCategory}</b></p>
       <p class="info-modal-item">Size: <b>${size}</b></p>
        </div>
       <p class="info-modal-item">Popularity: <b>${popularity}</b></p>

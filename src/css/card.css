@@ -82,7 +82,6 @@
 }
 .card-content {
   padding-left: 20px;
-  /* margin-left: 20px; */
 }
 
 .product-title {
@@ -139,15 +138,14 @@ b {
   line-height: 1.11;
 }
 .price-info {
-  margin-bottom: 20px;
-  display: inline-flex;
+  padding-bottom: 20px;
+  display: flex;
   align-items: flex-end;
-  gap: 215px;
+  max-width: 290px;
 }
 
 @media screen and (min-width: 1440px) {
   .price-info {
-    gap: 174px;
     margin-right: 20px;
   }
 }
@@ -163,13 +161,11 @@ b {
   padding: 8px;
   justify-content: center;
   align-items: center;
-  /* gap: 10px; */
   height: 34px;
   width: 34px;
-
   border: none;
   border-radius: 50%;
-
+  margin-left: auto;
   background-color: var(--green);
   transition: var(--animation);
 }
@@ -233,6 +229,7 @@ b {
 @media screen and (min-width: 1440px) {
   .main-prod {
     display: flex;
+    justify-content: space-between;
   }
 }
 

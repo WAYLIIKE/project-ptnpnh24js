@@ -8,8 +8,9 @@ const allList = document.querySelector('.menu-cards');
 //  розмітка  картки
 function createMarkupAll(arr) {
   return arr
-    .map(
-      ({ _id, img, name, category, size, popularity, price }) => `
+    .map(({ _id, img, name, category, size, popularity, price }) => {
+      const updCategory = category.split('_').join(' ');
+      return `
    <li  class="product-card" data-id="${_id}">
    <div class="product-cart-container">
    <div class="product-image-container">
@@ -20,7 +21,7 @@ function createMarkupAll(arr) {
       <h4 class="product-title">${name}</h4>
       <div class="descr-container">
       <p class="product-description">Category:
-      <b>${category}</b>
+      <b>${updCategory}</b>
       </p>
       <p class="product-description">Size:
       <b>${size}</b>
@@ -47,8 +48,8 @@ function createMarkupAll(arr) {
       </div>
       </div>
     </li>
-        `
-    )
+        `;
+    })
     .join('');
 }
 // додавання в кошик
