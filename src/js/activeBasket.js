@@ -88,7 +88,7 @@ class ShoppingCart {
 
   async logProductsApi() {
     try {
-      const id = '640c2dd963a319ea671e383b';
+      const id = '640c2dd963a319ea671e385f';
       const result = await this.getProductByID(id);
       console.log(result);
 
