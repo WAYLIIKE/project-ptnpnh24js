@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 class ShoppingCart {
   constructor() {
     this.listInBasket = document.querySelector('.list-in-basket');
@@ -244,6 +246,8 @@ class ShoppingCart {
   }
 }
 
-const shoppingCart = new ShoppingCart();
+// const shoppingCart = new ShoppingCart();
 
-shoppingCart.logProductsApi();
+// shoppingCart.logProductsApi();
+
+export { ShoppingCart };

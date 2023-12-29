@@ -53,3 +53,9 @@ function isBasketActive() {
 }
 
 isBasketActive();
+
+import { ShoppingCart } from './activeBasket';
+
+const shoppingCart = new ShoppingCart();
+
+shoppingCart.logProductsApi();
