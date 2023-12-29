@@ -10,9 +10,9 @@
     
     <script type="module" crossorigin src="/project-ptnpnh24js/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/project-ptnpnh24js/assets/vendor-2dcf4ad5.js">
-    <link rel="modulepreload" crossorigin href="/project-ptnpnh24js/assets/footer-ff9b61fb.js">
+    <link rel="modulepreload" crossorigin href="/project-ptnpnh24js/assets/footer-c8e5cdcb.js">
+    <link rel="stylesheet" href="/project-ptnpnh24js/assets/footer-518f9d06.css">
     <link rel="stylesheet" href="/project-ptnpnh24js/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/project-ptnpnh24js/assets/footer-3f23c075.css">
   </head>
   <body>
     <!-- HEADER by Max -->
@@ -79,24 +79,61 @@
 </section>
 
       <!-- MENU CARD by Anya Semonenko -->
-      <section>
-  <ul class="menu-card"></ul>
-</section>
+      <section class="container">
+        <div>
+  <h3 class="filters-header">Filters:</h3>
+  <div class="filters-wrapper">
+    <div class="search-form-wrapper">
+      <form class="search-form" id="searchForm">
+        <input
+          class="search-form-input"
+          type="text"
+          id="searchQuery"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search for anything"
+        />
+        <button class="search-form-button" type="submit">
+          <svg class="icon-search" width="20" height="20">
+            <use href="/project-ptnpnh24js/assets/sprite-fe336fca.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="categories-filter-wrapper">
+      <form class="categories-form">
+        <select
+          class="categories-filter-select"
+          name="categoryQuery"
+          id="categoryQuery"
+          placeholder="Categories"
+        ></select>
+      </form>
+      <svg class="categories-filter-icon" width="20" height="20">
+        <use href="/project-ptnpnh24js/assets/sprite-fe336fca.svg#icon-down-categories"></use>
+      </svg>
+    </div>
+  </div>
+</div>
 
-      <div class="container pop-dis-container">
-        <!-- POPULAR SECTION by Irina Lender -->
-        <div class="popular-container">
+        <div class="main-prod">
+          <ul class="menu-cards" id="menuCards"></ul>
+          <div class="container pop-dis-container">
+            <!-- POPULAR SECTION by Irina Lender -->
+            <div class="popular-container">
   <h3 class="popular-tittle">Popular products</h3>
   <ul class="popular-list"></ul>
 </div>
 
-        <!-- DISCOUNT SECTION by Oleksnder -->
-        <div class="discount-container">
+            <!-- DISCOUNT SECTION by Oleksnder -->
+            <div class="discount-container">
   <h3 class="discount-title">Discount products</h3>
   <ul class="discount-list"></ul>
 </div>
 
-      </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- FOOTER by Sofiia -->
     <footer class="footer">
