@@ -1,3 +1,35 @@
-<section>
-  <ul class="menu-card"></ul>
-</section>
+<div>
+  <h3 class="filters-header">Filters:</h3>
+  <div class="filters-wrapper">
+    <div class="search-form-wrapper">
+      <form class="search-form" id="searchForm">
+        <input
+          class="search-form-input"
+          type="text"
+          id="searchQuery"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search for anything"
+        />
+        <button class="search-form-button" type="submit">
+          <svg class="icon-search" width="20" height="20">
+            <use href="./img/icons/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="categories-filter-wrapper">
+      <form class="categories-form">
+        <select
+          class="categories-filter-select"
+          name="categoryQuery"
+          id="categoryQuery"
+          placeholder="Categories"
+        ></select>
+      </form>
+      <svg class="categories-filter-icon" width="20" height="20">
+        <use href="./img/icons/sprite.svg#icon-down-categories"></use>
+      </svg>
+    </div>
+  </div>
+</div>

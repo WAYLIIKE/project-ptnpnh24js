@@ -85,7 +85,15 @@
   margin-top: 16px;
 }
 
+.icon-check {
+  transition: background-color var(--animation);
+}
+
 .discount-btn:hover {
+  background-color: var(--hover-green);
+}
+
+.discount-btn:hover .icon-check {
   background-color: var(--hover-green);
 }
 

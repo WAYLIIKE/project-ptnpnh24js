@@ -1,15 +1,9 @@
-import { getAllProducts } from './fetchAPI';
-const allList = document.querySelector('.js-list');
-async function getDataAllProducts() {
-  try {
-    const result = await getAllProducts();
-    allList.insertAdjacentHTML('beforeend', createMarkupAll(result.results));
-  } catch (error) {
-    console.log(error);
-    return error;
-  }
-}
-getDataAllProducts();
+import { updateItemCountDisplay } from './header';
+import { setBasketLocalStorage, getBasketLocalStorage } from './markupPopular';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+import sprite from '/img/icons/sprite.svg';
+const allList = document.querySelector('.menu-cards');
 
 //  розмітка  картки
 function createMarkupAll(arr) {
@@ -39,14 +33,16 @@ function createMarkupAll(arr) {
       <p class="product-price">&#36;${price}
       </p>
       
-      <button class="product-add-btn" type="button">
-      <svg class="cart-icon">
-      <use href="${cartIcon}" width="18" hight="18"></use>
+      <button class="product-add-btn unused" type="button">
+
+      <svg class="cart-icon-check is-hidden unused">
+      <use class="unused" href="${sprite}#icon-check" width="18" hight="18"></use>  
       </svg>
 
-       <svg class="cart-icon-check is-hidden">
-      <use href="${cartIconCheck}" width="18" hight="18"></use>  
+      <svg class="cart-icon unused">
+      <use class="unused" href="${sprite}#icon-shop" width="18" hight="18"></use>
       </svg>
+
       </button>
       </div>
       </div>
@@ -56,8 +52,6 @@ function createMarkupAll(arr) {
     .join('');
 }
 // додавання в кошик
-const cartIcon = '/img/icons/sprite.svg#icon-shop';
-const cartIconCheck = '/img/icons/sprite.svg#icon-check';
 
 allList.addEventListener('click', handlerClick);
 
@@ -65,27 +59,23 @@ function handlerClick(event) {
   const targetButton = event.target.closest('.product-add-btn');
   if (!targetButton) return;
   const card = event.target.closest('.product-card');
-  console.log(card);
   const id = card.dataset.id;
-  console.log(id);
   const basket = getBasketLocalStorage();
-
   if (basket.includes(id)) {
+    iziToast.warning({
+      title: 'Warning',
+      message: 'You`ve already add this product to basket!',
+      position: 'topRight',
+    });
     return;
   }
   const check = targetButton.querySelector('.cart-icon-check');
   const shop = targetButton.querySelector('.cart-icon');
-  console.log(check);
-  console.log(shop);
   shop.classList.add('is-hidden');
   check.classList.remove('is-hidden');
   basket.push(id);
   setBasketLocalStorage(basket);
+  updateItemCountDisplay();
 }
-function getBasketLocalStorage() {
-  const cardDataJSONE = localStorage.getItem('basket');
-  return cardDataJSONE ? JSON.parse(cardDataJSONE) : [];
-}
-function setBasketLocalStorage(basket) {
-  localStorage.setItem('basket', JSON.stringify(basket));
-}
+
+export { createMarkupAll, allList };

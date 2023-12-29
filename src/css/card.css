@@ -5,32 +5,54 @@
   align-items: center;
 }
 
-@media screen and (min-width: 768px) {
-  .products-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .products-container {
-    row-gap: 40px;
-    column-gap: 20px;
-  }
-}
 .product-card {
   border-radius: 20px;
   background-color: var(--white);
   margin-bottom: 20px;
+  list-style: none;
+  cursor: pointer;
 }
 
-/* @media only screen and (min-width: 1440px) {
-  .product-cart {
-    max-width: 925px;
-    flex-basis: calc((100% - 20px * 2) / 3);
+@media screen and (max-width: 767.98px) {
+  .menu-cards {
+    margin-bottom: 80px;
   }
-} */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+  .menu-cards {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .product-card {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .menu-cards {
+    row-gap: 40px;
+    column-gap: 16px;
+  }
+
+  .product-card {
+    transition: box-shadow var(--animation);
+    max-height: 360px;
+  }
+
+  .product-card:hover,
+  .product-card:focus {
+    box-shadow: var(--shadow);
+  }
+}
 
 .product-cart-container {
   display: flex;
@@ -153,4 +175,59 @@ b {
 }
 .is-hidden {
   display: none;
+}
+
+.empty-search {
+  margin-top: 100px;
+  margin-bottom: 180px;
+}
+
+.empty-search-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+
+.empty-search-title-word {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--green);
+}
+
+.empty-search-text {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--grey);
+}
+
+@media screen and (min-width: 768px) {
+  .empty-search {
+    max-width: 370px;
+    margin: 0 auto;
+    margin-top: 110px;
+    margin-bottom: 300px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .empty-search {
+    margin-top: 200px;
+    padding-right: 347px;
+    margin-left: 208px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-prod {
+    display: flex;
+  }
 }
