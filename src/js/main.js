@@ -98,7 +98,10 @@ import { getAllProducts } from './fetchAPI';
 import { productsListContainer } from './menuCard';
 
 allList.addEventListener('click', async function (event) {
-  if (event.target.classList.contains('unused')) {
+  if (
+    event.target.classList.contains('unused') ||
+    event.target.classList.contains('menu-cards')
+  ) {
     return;
   }
   const productId = event.target

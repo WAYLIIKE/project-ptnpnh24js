@@ -28,7 +28,7 @@ export async function populateCategories() {
             )}</option>`
         )
         .join('') +
-      `<option value="all">Show all</option>`;
+      `<option value="">Show all</option>`;
 
     categorySelect.insertAdjacentHTML('beforeend', optionsHTML);
     // console.log(categories);

@@ -30,6 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
+    align-content: flex-start;
   }
 
   .product-card {
@@ -39,13 +40,15 @@
 
 @media screen and (min-width: 1440px) {
   .menu-cards {
-    row-gap: 40px;
+    row-gap: 55px;
     column-gap: 16px;
   }
 
   .product-card {
     transition: box-shadow var(--animation);
     max-height: 360px;
+    max-width: 295px;
+    flex-basis: calc((100% - 16px * 2) / 3);
   }
 
   .product-card:hover,
