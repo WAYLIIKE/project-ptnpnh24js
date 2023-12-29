@@ -27,20 +27,6 @@ let filters = {
 
 localStorage.removeItem('filters');
 
-// getAllProducts({
-//   page: 1,
-//   limit: 9,
-// })
-//   .then(data => {
-//     const productArray = Array.isArray(data.results) ? data.results : [];
-
-//     productsListContainer.innerHTML = createMarkupAll(productArray);
-//   })
-//   .catch(error => {
-//     console.error('Error fetching products:', error);
-//   })
-//   .finally(() => searchForm.reset());
-
 function onSearch(event) {
   event.preventDefault();
   const searchQuery = event.currentTarget.elements.searchQuery.value
@@ -81,14 +67,14 @@ function createFilteredMenu() {
     filters = JSON.parse(storedFilters);
   }
   console.log(filters);
-  productsListContainer.innerHTML = `<div class="empty-search"><h2 class="empty-search-title">Nothing was found for the selected <span class="empty-search-title-word">filters...</span></h2>
-        <p class="empty-search-text"> Try adjusting your search parameters or browse our range by other criteria to find the perfect product for you. </p></div>`;
 
   getAllProducts(filters)
     .then(data => {
       const productArray = Array.isArray(data.results) ? data.results : [];
 
       if (productArray.length === 0) {
+        productsListContainer.innerHTML = `<div class="empty-search"><h2 class="empty-search-title">Nothing was found for the selected <span class="empty-search-title-word">filters...</span></h2>
+        <p class="empty-search-text"> Try adjusting your search parameters or browse our range by other criteria to find the perfect product for you. </p></div>`;
         iziToast.warning({
           title: 'Warning',
           message: 'No products found... Try again',

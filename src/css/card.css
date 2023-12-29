@@ -40,8 +40,9 @@
 
 @media screen and (min-width: 1440px) {
   .menu-cards {
-    row-gap: 55px;
+    row-gap: 51px;
     column-gap: 16px;
+    width: 960px;
   }
 
   .product-card {
@@ -233,4 +234,8 @@ b {
   .main-prod {
     display: flex;
   }
+}
+
+.cart-icon {
+  max-height: 18px;
 }

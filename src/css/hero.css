@@ -97,7 +97,7 @@
 }
 @media only screen and (min-width: 1440px) {
   .hero-image {
-    max-width: 1240px;
+    max-width: 1280px;
     height: 350px;
     background-image: url(/img/hero/desktop_hero/women-sportswear-working-out-outdoors1.jpg);
   }
