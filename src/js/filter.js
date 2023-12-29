@@ -1,18 +1,7 @@
 import { getAllCategories } from '../js/fetchAPI.js';
-// import SlimSelect from 'slim-select'
-
-// new SlimSelect({
-//   select: '#categoryQuery',
-//   placeholder: 'Categories',
-//   settings: {
-//     maxSelected: 1,
-//     showSearch: false,
-//   }
-// });
 
 export async function populateCategories() {
   const categorySelect = document.getElementById('categoryQuery');
-  // console.log(categorySelect)
   categorySelect.innerHTML = '';
   try {
     const categories = await getAllCategories();
@@ -31,10 +20,7 @@ export async function populateCategories() {
       `<option value="">Show all</option>`;
 
     categorySelect.insertAdjacentHTML('beforeend', optionsHTML);
-    // console.log(categories);
   } catch (error) {
     console.error('Error fetching categories:', error);
   }
 }
-
-// populateCategories();

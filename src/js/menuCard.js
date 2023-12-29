@@ -15,11 +15,11 @@ const searchForm = document.querySelector('.search-form');
 const productsListContainer = document.querySelector('.menu-cards');
 const categorySelect = document.getElementById('categoryQuery');
 
-categorySelect.addEventListener('submit', onCategoryChange);
+categorySelect.addEventListener('change', onCategoryChange);
 searchForm.addEventListener('submit', onSearch);
 
 let filters = {
-  keyword: null,
+  keyword: '',
   category: null,
   page: 1,
   limit: 9,
@@ -29,21 +29,20 @@ localStorage.removeItem('filters');
 
 function onSearch(event) {
   event.preventDefault();
-  const searchQuery = event.currentTarget.elements.searchQuery.value
+  const selectedCategory = categorySelect.value;
+  console.log(selectedCategory);
+  let searchQuery = event.currentTarget.elements.searchQuery.value
     .trim()
     .toLowerCase();
-  // .split(' ')
-  // .join('+');
-  filters.keyword = searchQuery || null;
+  filters.keyword = searchQuery || '';
   if (searchQuery === '' && categorySelect.value !== '') {
     return onCategoryChange();
   } else if (searchQuery === '') {
-    iziToast.warning({
-      title: 'Warning',
-      message: 'Enter some input to search product',
-      position: 'topRight',
-    });
-    return;
+    filters = {
+      keyword: '',
+      limit: 9,
+    };
+    return onCategoryChange();
   }
   onCategoryChange();
 }
