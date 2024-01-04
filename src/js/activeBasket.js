@@ -139,9 +139,7 @@ class ShoppingCart {
             <ul class="category-container">
               <li>
                 <p class="details-text">
-                  <span class="detail">Category:</span><span>${
-                    product.category
-                  }</span>
+                  <span class="detail">Category:</span><span>${product.category}</span>
                 </p>
               </li>
               <li>
@@ -153,19 +151,6 @@ class ShoppingCart {
           </div>
           <div class="price-container">
             <span class="card-price">$${product.price}</span>
-            <div class="counter-container">
-              <button class="btn-minus">
-                <svg class="counter-icon">
-                  <use href="../img/icons/sprite.svg#icon-down-categories"></use>
-                </svg>
-              </button>
-              <span class="counter">${product.quantity || 1}</span>
-              <button class="btn-plus">
-                <svg class="counter-icon">
-                  <use href="../img/icons/sprite.svg#icon-close"></use>
-                </svg>
-              </button>
-            </div>
           </div>
         </div>
       </li>
