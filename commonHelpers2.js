@@ -1,4 +1,4 @@
-import{b as B,s as n,u,g as m,c as T,d as q,e as w,f as D,a as P}from"./assets/sprite-1cd3270c.js";import{i as p}from"./assets/vendor-2dcf4ad5.js";const v=document.querySelector(".popular-list");async function j(){try{return await B()}catch(t){console.log(t)}}function x(t){const e=t.map(({_id:s,img:o,name:c,size:a,category:i,popularity:d})=>{const l=i.split("_").join(" ");return`<li class="popular-item" data-id='${s}'>
+import{b as B,s as n,u,g as m,c as T,d as q,e as w,f as D,a as P}from"./assets/sprite-6cae3e1b.js";import{i as p}from"./assets/vendor-2dcf4ad5.js";const v=document.querySelector(".popular-list");async function j(){try{return await B()}catch(t){console.log(t)}}function x(t){const e=t.map(({_id:s,img:o,name:c,size:a,category:i,popularity:d})=>{const l=i.split("_").join(" ");return`<li class="popular-item" data-id='${s}'>
     <div class="popular-card">
     <div class="popular-image-container">
     <img class="popular-image" src="${o}" alt="${c}" width="56px" height="56px">
