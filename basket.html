@@ -9,8 +9,8 @@
     
     <script type="module" crossorigin src="/project-ptnpnh24js/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/project-ptnpnh24js/assets/vendor-2dcf4ad5.js">
-    <link rel="modulepreload" crossorigin href="/project-ptnpnh24js/assets/fetchAPI-c38217c0.js">
-    <link rel="stylesheet" href="/project-ptnpnh24js/assets/fetchAPI-309f35a0.css">
+    <link rel="modulepreload" crossorigin href="/project-ptnpnh24js/assets/fetchAPI-8571c566.js">
+    <link rel="stylesheet" href="/project-ptnpnh24js/assets/fetchAPI-20b90c29.css">
     <link rel="stylesheet" href="/project-ptnpnh24js/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -150,19 +150,17 @@
         type="email"
         name="email"
         placeholder="Mail:"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
         title="Enter a valid email address"
-        required
       />
       <label>
-        <button type="button" class="form-button" data-modal-open>
+        <button type="submit" class="form-button" data-order-open>
           Checkout
         </button>
       </label>
     </form>
   </section>
 </div>
-<!-- <script src="../js/activeBasket.js" type="module"></script> -->
 
     </main>
     <footer class="footer">
@@ -317,9 +315,9 @@
 </div>
 
     <!-- MODAL ORDER by Анастасія Халупська -->
-    <div class="backdrop-success is-hidden data-modal" data-modal>
+    <div class="backdrop-success is-hidden data-modal" data-order>
   <div class="modal-success">
-    <button class="close-modal-success" data-modal-close>
+    <button class="close-modal-success" data-order-close>
       <svg class="close-svg-success" width="22" height="22">
         <use href="/project-ptnpnh24js/assets/sprite-fe336fca.svg#icon-close"></use>
       </svg>

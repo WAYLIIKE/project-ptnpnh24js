@@ -1,4 +1,4 @@
-import{a as B,u,g as m,b as T,c as j,d as w,f as q,s as D}from"./assets/fetchAPI-c38217c0.js";import{i as p}from"./assets/vendor-2dcf4ad5.js";const n="/project-ptnpnh24js/assets/sprite-fe336fca.svg",v=document.querySelector(".popular-list");async function P(){try{return await B()}catch(t){console.log(t)}}function x(t){const e=t.map(({_id:s,img:o,name:c,size:a,category:i,popularity:d})=>{const l=i.split("_").join(" ");return`<li class="popular-item" data-id='${s}'>
+import{a as B,u,g as m,b as T,c as j,d as w,f as q,s as D}from"./assets/fetchAPI-8571c566.js";import{i as p}from"./assets/vendor-2dcf4ad5.js";const n="/project-ptnpnh24js/assets/sprite-fe336fca.svg",v=document.querySelector(".popular-list");async function P(){try{return await B()}catch(t){console.log(t)}}function x(t){const e=t.map(({_id:s,img:o,name:c,size:a,category:i,popularity:d})=>{const l=i.split("_").join(" ");return`<li class="popular-item" data-id='${s}'>
     <div class="popular-card">
     <div class="popular-image-container">
     <img class="popular-image" src="${o}" alt="${c}" width="56px" height="56px">
