@@ -1,5 +1,6 @@
 import { getProductByID } from './fetchAPI';
 import { updateItemCountDisplay } from './header';
+import sprite from '/img/icons/sprite.svg';
 
 class ShoppingCart {
   constructor() {
@@ -131,7 +132,7 @@ class ShoppingCart {
               <h1 class="card-title">${product.name}</h1>
               <button class="delete-elem-button" data-id="${product._id}">
                 <svg class="delete-elem-icon">
-                  <use href="../img/icons/sprite.svg#icon-close"></use>
+                  <use href="${sprite}#icon-close"></use>
                 </svg>
               </button>
             </div>
