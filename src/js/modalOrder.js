@@ -15,7 +15,7 @@ const modalOrder = () => {
   }
 
   function closeModal() {
-    refs.modal.classList.toggle('is-hidden');
+    refs.modal.classList.add('is-hidden');
     // refs.modal.style.display = 'none';
     document.body.style.overflow = '';
   }

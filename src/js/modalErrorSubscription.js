@@ -15,7 +15,7 @@ function toggleModalClose() {
   document.body.style.overflow = '';
 }
 function closeModalOnEsc(event) {
-  if (event.key === 'Escape' && refs.modal.classList.contains('is-visible')) {
+  if (event.key === 'Escape' && modal.classList.contains('is-visible')) {
     modal.classList.toggle('is-visible');
     document.body.style.overflow = '';
   }

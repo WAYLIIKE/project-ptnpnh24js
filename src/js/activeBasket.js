@@ -52,7 +52,7 @@ class ShoppingCart {
 
       if (this.storedProducts.length === 1) {
         this.deleteList();
-        window.location.href = '../index.html';
+        window.location.href = '/index.html';
         return;
       }
 
@@ -85,7 +85,7 @@ class ShoppingCart {
     this.listInBasket.innerHTML = '';
     localStorage.clear();
     updateItemCountDisplay();
-    window.location.href = '../index.html';
+    window.location.href = '/index.html';
   }
 
   async logProductsApi() {
