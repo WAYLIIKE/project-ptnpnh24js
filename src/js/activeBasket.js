@@ -1,4 +1,5 @@
-import axios from 'axios';
+import { getProductByID } from './fetchAPI';
+import { updateItemCountDisplay } from './header';
 
 class ShoppingCart {
   constructor() {
@@ -10,8 +11,8 @@ class ShoppingCart {
     this.form = document.querySelector('.form-container');
     this.input = document.querySelector('.form-input');
 
-    this.storedProducts = JSON.parse(localStorage.getItem('products')) || {};
-    this.totalAmountOfElements = Object.keys(this.storedProducts).length;
+    this.storedProducts = JSON.parse(localStorage.getItem('basket')) || [];
+    this.totalAmountOfElements = this.storedProducts.length;
 
     //EventListeners
     this.deleteAllButton.addEventListener('click', this.deleteList.bind(this));
@@ -20,24 +21,24 @@ class ShoppingCart {
       'click',
       this.handleDeleteClick.bind(this)
     );
-    this.listInBasket.addEventListener('click', event => {
+    this.listInBasket.addEventListener('click', async event => {
       const decreaseButton = event.target.closest('.btn-minus');
       if (decreaseButton) {
         const cardContainer = decreaseButton.closest('.card-container');
         if (cardContainer) {
           const productId = cardContainer.getAttribute('data-id');
-          this.decreaseProductQuantity(productId);
+          await this.decreaseProductQuantity(productId);
         }
       }
     });
 
-    this.listInBasket.addEventListener('click', event => {
+    this.listInBasket.addEventListener('click', async event => {
       const increaseButton = event.target.closest('.btn-plus');
       if (increaseButton) {
         const cardContainer = increaseButton.closest('.card-container');
         if (cardContainer) {
           const productId = cardContainer.getAttribute('data-id');
-          this.increaseProductQuantity(productId);
+          await this.increaseProductQuantity(productId);
         }
       }
     });
@@ -55,9 +56,21 @@ class ShoppingCart {
     const deleteButton = event.target.closest('.delete-elem-button');
 
     if (deleteButton) {
-      const productId = deleteButton.getAttribute('data-id');
+      const productId = deleteButton
+        .closest('.card-container')
+        .getAttribute('data-id');
 
-      delete this.storedProducts[productId];
+      const productIndex = this.storedProducts.findIndex(
+        product => product === productId
+      );
+
+      if (productIndex !== -1) {
+        this.storedProducts.splice(productIndex, 1);
+
+        localStorage.setItem('basket', JSON.stringify(this.storedProducts));
+
+        this.totalAmountOfElements = this.storedProducts.length;
+      }
 
       const listItem = deleteButton.closest('.card-container');
       if (listItem && listItem.parentNode) {
@@ -66,8 +79,7 @@ class ShoppingCart {
 
       this.updateCartHeader();
       this.updateTotalPrice();
-
-      localStorage.setItem('products', JSON.stringify(this.storedProducts));
+      updateItemCountDisplay();
     }
   }
 
@@ -76,73 +88,39 @@ class ShoppingCart {
     this.totalPriceElement.textContent = '$0,00';
     this.listInBasket.innerHTML = '';
     localStorage.clear();
-  }
-
-  async getProductByID(id) {
-    const BASE_URL = 'https://food-boutique.b.goit.study/api/products/';
-    try {
-      const result = await axios.get(`${BASE_URL}${id}`);
-      return result.data;
-    } catch (error) {
-      return error.message;
-    }
+    updateItemCountDisplay();
   }
 
   async logProductsApi() {
     try {
-      const id = '640c2dd963a319ea671e385f';
-      const result = await this.getProductByID(id);
+      for (const id of this.storedProducts) {
+        const result = await getProductByID(id);
 
-      if (result) {
-        this.addToLocalStorage(id, result);
-
-        this.listInBasket.innerHTML = '';
-
-        Object.values(this.storedProducts).forEach(product => {
+        if (result) {
+          result.quantity = 1;
           const existingListItem = this.listInBasket.querySelector(
-            `[data-id="${product._id}"]`
+            `[data-id="${result._id}"]`
           );
 
           if (existingListItem) {
             const counterSpan = existingListItem.querySelector('.counter');
             if (counterSpan) {
-              counterSpan.textContent = product.counter || 1;
+              counterSpan.textContent = result.quantity;
             }
           } else {
-            const newCard = this.createProductCard(product);
+            const newCard = this.createProductCard(result);
             this.listInBasket.insertAdjacentHTML('beforeend', newCard);
-
-            const deleteButton = this.listInBasket.querySelector(
-              `[data-id="${product._id}"] .delete-elem-button`
-            );
-            if (deleteButton) {
-              deleteButton.addEventListener(
-                'click',
-                this.handleDeleteClick.bind(this)
-              );
-            }
           }
-        });
-
-        this.updateCartHeader();
-        this.updateTotalPrice();
-      } else {
-        console.log('Product not found');
+        } else {
+          console.log(`Product with ID ${id} not found`);
+        }
       }
+
+      this.updateCartHeader();
+      await this.updateTotalPrice();
     } catch (error) {
       console.log(error);
     }
-  }
-
-  addToLocalStorage(id, product) {
-    if (this.storedProducts[id]) {
-      this.storedProducts[id].counter =
-        (this.storedProducts[id].counter || 1) + 1;
-    } else {
-      product.counter = 1;
-      this.storedProducts[id] = product;
-    }
-    localStorage.setItem('products', JSON.stringify(this.storedProducts));
   }
 
   createProductCard(product) {
@@ -184,7 +162,7 @@ class ShoppingCart {
                   <use href="../img/icons/sprite.svg#icon-down-categories"></use>
                 </svg>
               </button>
-              <span class="counter">${product.counter || 1}</span>
+              <span class="counter">${product.quantity || 1}</span>
               <button class="btn-plus">
                 <svg class="counter-icon">
                   <use href="../img/icons/sprite.svg#icon-close"></use>
@@ -198,56 +176,22 @@ class ShoppingCart {
   }
 
   updateCartHeader() {
-    const updatedTotalAmount = Object.keys(this.storedProducts).length;
-    this.cartHeader.textContent = `CART (${updatedTotalAmount})`;
+    this.cartHeader.textContent = `CART (${this.totalAmountOfElements})`;
   }
 
-  updateTotalPrice() {
-    const totalPrice = Object.values(this.storedProducts).reduce(
-      (acc, product) => acc + product.price * (product.counter || 1),
-      0
-    );
-    this.totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
-  }
+  async updateTotalPrice() {
+    let totalPrice = 0;
 
-  decreaseProductQuantity(productId) {
-    if (this.storedProducts[productId]) {
-      this.storedProducts[productId].counter = Math.max(
-        this.storedProducts[productId].counter - 1,
-        1
-      );
-      this.updateProductQuantity(productId);
-      this.updateTotalPrice();
-      localStorage.setItem('products', JSON.stringify(this.storedProducts));
-    }
-  }
+    for (const id of this.storedProducts) {
+      const product = await getProductByID(id);
 
-  increaseProductQuantity(productId) {
-    if (this.storedProducts[productId]) {
-      this.storedProducts[productId].counter =
-        (this.storedProducts[productId].counter || 1) + 1;
-      this.updateProductQuantity(productId);
-      this.updateTotalPrice();
-      localStorage.setItem('products', JSON.stringify(this.storedProducts));
-    }
-  }
-
-  updateProductQuantity(productId) {
-    const existingListItem = this.listInBasket.querySelector(
-      `[data-id="${productId}"]`
-    );
-
-    if (existingListItem) {
-      const counterSpan = existingListItem.querySelector('.counter');
-      if (counterSpan) {
-        counterSpan.textContent = this.storedProducts[productId].counter || 1;
+      if (product) {
+        totalPrice += product.price * (product.quantity || 1);
       }
     }
+
+    this.totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
   }
 }
-
-// const shoppingCart = new ShoppingCart();
-
-// shoppingCart.logProductsApi();
 
 export { ShoppingCart };
