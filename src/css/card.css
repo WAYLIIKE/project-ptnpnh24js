@@ -40,7 +40,7 @@
 
 @media screen and (min-width: 1440px) {
   .menu-cards {
-    row-gap: 51px;
+    row-gap: 54px;
     column-gap: 16px;
     width: 960px;
   }

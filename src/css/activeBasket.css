@@ -136,7 +136,7 @@
 }
 
 .form-input {
-  border: 1px, solid rgba(1, 1, 1, 0.3);
+  border: 1px solid rgba(1, 1, 1, 0.3);
   border-radius: 30px;
   padding: 12px 20px;
   font-size: 14px;
@@ -159,7 +159,7 @@
 /* card */
 .list-in-basket {
   max-height: 450px;
-  /* padding-top: 30px; */
+  padding-top: 30px;
   padding-right: 14px;
   overflow-y: auto;
 }
@@ -410,17 +410,16 @@
     border: 1px solid rgba(1, 1, 1, 0.1);
     border-radius: 100px;
   }
-  
+
   .counter-icon {
     width: 18px;
     height: 18px;
   }
-  
+
   .counter {
     font-size: 20px;
     line-height: 24px;
   }
-
 }
 
 /* #endregion */

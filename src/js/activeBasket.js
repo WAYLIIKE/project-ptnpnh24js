@@ -5,11 +5,8 @@ class ShoppingCart {
   constructor() {
     this.listInBasket = document.querySelector('.list-in-basket');
     this.totalPriceElement = document.querySelector('.total-price');
-    this.formInput = document.querySelector('.form-input');
     this.deleteAllButton = document.querySelector('.delete-button');
     this.cartHeader = document.querySelector('.cart-header');
-    this.form = document.querySelector('.form-container');
-    this.input = document.querySelector('.form-input');
 
     this.storedProducts = JSON.parse(localStorage.getItem('basket')) || [];
     this.totalAmountOfElements = this.storedProducts.length;
@@ -42,14 +39,6 @@ class ShoppingCart {
         }
       }
     });
-
-    this.form.addEventListener('submit', event => {
-      const email = this.input.value;
-
-      const formDataJSON = JSON.stringify(email);
-
-      localStorage.setItem('formData', formDataJSON);
-    });
   }
 
   handleDeleteClick(event) {
@@ -59,6 +48,12 @@ class ShoppingCart {
       const productId = deleteButton
         .closest('.card-container')
         .getAttribute('data-id');
+
+      if (this.storedProducts.length === 1) {
+        this.deleteList();
+        window.location.href = '../index.html';
+        return;
+      }
 
       const productIndex = this.storedProducts.findIndex(
         product => product === productId
@@ -89,6 +84,7 @@ class ShoppingCart {
     this.listInBasket.innerHTML = '';
     localStorage.clear();
     updateItemCountDisplay();
+    window.location.href = '../index.html';
   }
 
   async logProductsApi() {

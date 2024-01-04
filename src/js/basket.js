@@ -17,21 +17,19 @@ updateItemCountDisplay();
 
 ////////////////////////////////////////////////////////////////////////////
 
-// MODAL ORDER //
+// ORDER SCRIPT //
 
-import { modalOrder } from './modalOrder';
+import { formOrder, orderSubmit } from './order';
 
-modalOrder();
+formOrder.addEventListener('submit', orderSubmit);
 
 ////////////////////////////////////////////////////////////////////////////
 
 // SUBSCRIPTION SCRIPT
 
-import { subscriptionSubmit } from './footer';
+import { formFooter, subscriptionSubmit } from './footer';
 
-const formOrder = document.querySelector('.form-button');
-
-formOrder.addEventListener('submit', subscriptionSubmit);
+formFooter.addEventListener('submit', subscriptionSubmit);
 
 ////////////////////////////////////////////////////////////////////////////
 

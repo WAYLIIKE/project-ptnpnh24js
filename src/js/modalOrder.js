@@ -1,8 +1,8 @@
 const modalOrder = () => {
   const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
+    openModalBtn: document.querySelector('[data-order-open]'),
+    closeModalBtn: document.querySelector('[data-order-close]'),
+    modal: document.querySelector('[data-order]'),
   };
   refs.openModalBtn.addEventListener('click', openWindow);
   refs.closeModalBtn.addEventListener('click', closeModal);
