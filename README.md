@@ -1,5 +1,5 @@
-# FoofBoutique project
+# FoodBoutique project
 
-Welcome to finish project of JS part
+Welcome to app "Food Boutique".It is a team project created as full responsive website.
 
 ![Beta version]
